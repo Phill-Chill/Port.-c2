@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portifólio Cálculo 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Cálculo 2</a>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Exercicios</button>
+                <ul class="dropdown-menu">
+                    <li><button class="dropdown-item" type="button">Limites</button></li>
+                    <li><button class="dropdown-item" type="button">Rituais</button></li>
+                    <li><button class="dropdown-item" type="button">Sobre a filosofia da lufifer</button></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <h2>Sequências</h2>
+
+    <p>Uma sequência é caracterizada por uma ordem lógica de números ou letras:</p>
+
+    <p>
+        a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>, ..., a<sub>n</sub>
+    </p>
+
+    <p>Cada 'a<sub>x</sub>' é chamado de termo e o número variando de 1 a 'n' é a posição do termo.</p>
+
+    <h3>Notação</h3>
+
+    <p>Para representar uma sequência a seguinte notação é utilizada:</p>
+    <p>a<sub>n</sub> = {a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>, ..., a<sub>n</sub>}.</p>
+    <p>O a<sub>n</sub>​ é o termo geral da sequência; é a equação que mostra como a sequência se comporta em função de
+        n. Por exemplo:</p>
+    <p>a<sub>n</sub> = {
+        1,
+        <sup>1</sup>&frasl;<sub>2</sub> ,
+        <sup>1</sup>&frasl;<sub>4</sub> ,
+        <sup>1</sup>&frasl;<sub>8</sub> ,
+        ... ,
+        <sup>1</sup>&frasl;<sub>2<sup>n</sup></sub> }
+
+    </p>
+    <p>Nesta sequência, cada termo é dado pela fórmula <u><span
+                title="Para a dedução da equação geral da sequência é necessário a identificação de padrões em relação a um termo e seus sucessores">a<sub>n</sub>
+                = <sup>1</sup>&frasl;<sub>2<sup>n</sup></sub></span></u>, que representa o comportamento da sequência
+        como um todo. Esta expressão é a nossa equação geral da sequência.
+    </p>
+
+    <p> Portanto, o a<sub>n</sub> é igual a <sup>1</sup>&frasl;<sub>2<sup>n</sup></sub>, assim a partir dessa lei de
+        formação é possível determinar qualquer termo de acordo com sua posição n. Com isso, em <span
+            title="Cálculo 2">C2</span> estudaremos sequência com n tendendo ao infinito, o que implica que sempre
+        haverá um termo sucessor (a<sub>n+1</sub>).</p>
+
+    <h3>
+        Limites
+    </h3>
+    <p>
+        Começaremos por limites, como estamos trabalhando com sequências infinitas principalmente com o objetivo de
+        descobrir se
+        ela tem um fim, tentando determinar sua convergência.
+    </p>
+    <h4>
+        Convergência
+    </h4>
+    <p>
+        Para continuarmos é necessário ter conhecimento prévio sobre cálculo 1, pois utilizaremos ferramentas como:
+        Limites, derivados e integrais.
+    </p>
+
+    <p>A convergência é determinada calculando o limite do termo geral com n tendendo ao infinito, sendo que, caso o
+        <span title="Limite"><u>Lim</u></span> seja um número que pertence ao numeros reais entao classificamos essa sequência
+        como convergente.
+    </p>
+    <p>Pela definição, temos:</p>
+    <p>Se Lim<sub>n->∞</sub>a<sub>n</sub> = L, então a<sub>n</sub> converge para L. Caso contrario, essa sequência
+        diverge.</p>
+
+    <h4>
+        1- Exemplos
+    </h4>
+    <small>
+        <hr>
+        <!--EXEMPLO a)-->
+        <p>
+            <b>a)</b> {<sup>1</sup>&frasl;<sub>2<sup>n</sup></sub>}<sup>∞</sup><sub>n = 1</sub> = {1 ,
+            <sup>1</sup>&frasl;<sub>2</sub> , <sup>1</sup>&frasl;<sub>4</sub> , ... ,
+            <sup>1</sup>&frasl;<sub>2<sup>n</sup></sub>}
+        </p>
+        <ul>
+            <li>
+                Termo geral (a<sub>n</sub>) = <sup>1</sup>&frasl;<sub>2<sup>n</sup></sub>;
+            </li>
+            <li>
+                Tome, lim<sub>n->∞ </sub>a<sub>n</sub> como L;
+
+            </li>
+            <li>
+                lim<sub>n->∞ <sup>1</sup>&frasl;<sub>2<sup>n</sup></sub> = 0;
+            </li>
+        </ul>
+        <p>Portanto, essa sequência converge converge para 0. </p>
+        <img src="GeoGebra.png" width="600px">
+        <p>Note que, à medida que n aumenta, o valor de Y se aproxima cada vez mais de 0.</p>
+        <!--EXEMPLO b)-->
+        <hr>
+        <p>
+            <b>b)</b>
+            {<sup>2<sup>n</sup></sup>&frasl;<sub>n</sub><sup>+1</sup>&frasl;<sub>n</sub>}<sup>∞</sup><sub>n=1</sub> =
+            {3, <sup>5</sup>&frasl;<sub>2</sub>, <sup>9</sup>&frasl;<sub>3</sub>, ...}
+        </p>
+        <ul>
+            <li>
+                Termo geral (a<sub>n</sub>) =
+                <sup>2<sup>n</sup></sup>&frasl;<sub>n</sub><sup>+1</sup>&frasl;<sub>n</sub>
+            </li>
+            <li>
+                Tome, lim<sub>n->∞</sub> a<sub>n</sub> como L;
+            </li>
+            <li>
+                lim<sub>n->∞</sub> <sup>2<sup>n</sup></sup>&frasl;<sub>n</sub><sup>+1</sup>&frasl;<sub>n</sub> = ∞;
+            </li>
+        </ul>
+        <p>
+            Portanto, a sequência diverge.
+        </p>
+
+        <img src="GeoGebra-a.png" width="600px">
+        <p>Note que, à medida que n aumenta, o valor de Y não converge para um ponto.</p>
+        <hr>
+    </small>
+    <h3>
+        Comportamentos sequenciais
+    </h3>
+    <h4>
+        <u>Sequência decrescente</u>
+    </h4>
+
+    <p>
+        Dada uma sequência qualquer a<sub>n</sub>, caso a<sub>n+1</sub> ≤ a<sub>n</sub> <b>∀n</b>, então dizemos que é
+        uma sequência decrescente.
+    </p>
+    <h5>
+        *Sequência estritamente decrescente: Atende à mesma condição de uma sequência decrescente, exceto que, para todo
+        n, cada termo é sempre maior que seu sucessor.
+
+    </h5>
+    <h4>
+        <u>Sequência crescente</u>
+    </h4>
+    <p>
+        Dada uma sequência qualquer a<sub>n</sub>, caso a<sub>n+1</sub> ≥ a<sub>n</sub> <b>∀n</b>, então dizemos que é
+        uma sequência decrescente.
+
+    </p>
+
+    <h5>
+        *Sequência estritamente decrescente: Atende à mesma condição de uma sequência crescente, exceto que, para todo
+        n, cada termo é sempre menor que seu sucessor.
+
+    </h5>
+
+    <p>
+        <b>Sequência monótona:</b> Quando uma sequência pode ser classificada como crescente ou decrescente, chamamos
+        essa sequência de monótona.
+    </p>
+    <a href="sequência.html">Exercicios</a>
+</body>
+
+</html>
