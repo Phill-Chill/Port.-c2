@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<html lang="pt-br">
+ <html lang="pt-br">
 
 
-<head>
+ <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portifólio Cálculo 2</title>
@@ -19,38 +19,27 @@
 <body>
     <header>
         <h1>Cálculo 2</h1>
-
-        <nav>
-            <ul class="test-button">
-                <li>
-                    <a href="https://www.google.com">a1</a>
-                </li>
-                <li>
-                    <a>a2</a>
-                </li>
-                <li>
-                    <a>a3</a>
-                </li>
-            </ul>
-
-
-
-            <ul class="nav-menu">
-                <li class="dropdown">
-                    <button>Exercicios</button>
-                    <div class="dropdown-content">
-                        <a href="index-copy.html">Limites</a>
-                        <a href="sequencia.html">Sequências</a>
-                        <a href="#Cs">Comportamentos Sequência</a>
-                    </div>
-                            
-                </li>
-
-            </ul>
-
-                <button class="button21">Navegação</button>
-
-        </nav>
+<div class="centraliiza">
+        <div class="dropdown-container">
+            <div class="dropdown">
+                <button class="dropbtn">Exercício</button>
+                <div class="dropdown-content">
+                    <a href="sequencia.html">Sequência</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Navegação</button>
+                <div class="dropdown-content">
+                    <a href="#notacao">Notação</a>
+                    <a href="#limites">Limites</a>
+                    <a href="#comportamentos">Comportamentos sequenciais</a>
+                    <a href="#tipos">Tipos de sequências</a>
+                </div>
+            </div>
+        </div>
+</div>
     </header>
 
     <!--TEXTO-CONTEUDO-->
@@ -75,8 +64,8 @@
         </p>
     
     </p>    
-    
-    <h3>Notação</h3>
+    <div id="notacao" class="notação">
+    <h3 >Notação</h3>
 
         <p>
             Para representar uma sequência a seguinte notação é utilizada:
@@ -126,8 +115,9 @@
             formação é possível determinar qualquer termo de acordo com sua posição n. Com isso, em <span
                 title="Cálculo 2">C2</span> estudaremos sequência com n tendendo ao infinito, o que implica que sempre
             haverá um termo sucessor (a<sub>n+1</sub>).</p>
-
-        <h3>
+</div>
+<div id="limites" class="limite">
+        <h3 >
             Limites:
         </h3>
         <p class="limite-conteudo">
@@ -235,7 +225,10 @@
             <br>
             <hr>
         </small>
-        <h3 id="Cs">
+
+        </div>
+        <div id="comportamentos" class="comportamento">
+        <h3>
             Comportamentos sequenciais
         </h3>
 
@@ -282,6 +275,7 @@
             essa sequência de monótona.
         </p>
         <hr>
+        <div id="tipos">
         <h3>Tipos de sequências</h3>
 
             
@@ -340,11 +334,54 @@
             <br>
 
         <p class="OBS">
-            <b><sup>*</sup>OBS:</b> Essa sequência chama-se seq. harmônica que pode ser facilmente confundida com a série harmônica, da qual não converge. 
+            <b><sup>*</sup>OBS:</b> Essa sequência chama-se seq. harmônica, que pode ser facilmente confundida com a série harmônica, da qual não converge. 
+        </p>
+
+        <h4>
+            III - a<sub>n</sub> = 
+            {1, <sup>1</sup>&frasl;<sub>4</sub> , 
+                <sup>1</sup>&frasl;<sub>8</sub> , 
+                <sup>1</sup>&frasl;<sub>16</sub> ,...};
+      </h4>
+
+            <br>
+
+        <p class="texto-h4">
+                Analisando o comportamento dos termos, pode-se deduzir a seguinte equação:
+        </p>
+
+            <br>
+
+         <p class="texto-h4" style="text-align: center;">
+            an = {<sup>1</sup>&frasl;<sub>2<sup>n</sup></sub>}<sup>∞</sup><sub><small>n=1</small></sub>
+        </p>
+
+        <p class="texto-h4">
+            Calculando o limite chegamos que:
+        </p>
+            
+            <br>
+
+        <p class="texto-h4">
+            - lim an<sub>n->∞</sub> = 0, portanto essa sequência converge para 0.
+        </p>
+
+            <br> 
+
+        <p class="OBS">
+            <b><sup>*</sup>OBS:</b> Esta sequência é conhecida como seq. geométrica. Caso sua razão (r = <sup>a<sub>2</sub></sup>&frasl;<sub>a<sub>1</sub></sub>) seja estritamente menor que 1, ela convergirá.
         </p>
 
     </div>
+    <div class="end-page"></div>   
+        
+    <h2>Séries</h2>
 
+    <p class="texto-h2">
+        <p>A soma de termos ordenados é denominada série</p>
+        <p>$$ séries = a_1 + a_2 + a_3 + \ldots + a_n $$</p>
+    </p>
+</div>
 
 </body>
 

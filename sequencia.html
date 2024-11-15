@@ -1,32 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portifólio Cálculo 2</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-
-
-
-
-    
-</head>
-<body>
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
     <header>
-    <h1>Sequência exercicios</h1>
-    <a href="index.html">voltar</a>
+      <h1>Exercício: Sequências</h1>
+      <a href="index.html">voltar</a>
     </header>
 
     <!--TEXTO CONTEUDO-->
     <div class="texto-conteudo">
-        <h2>Classifique as seguintes sequencias:</h2>
-        <p>a)an = {}</p>
+      <h2>Verifique se as seguintes sequências convergem:</h2>
 
+<!--DIV EQUACAO-->
+
+      <div class="equation">
+        <p>$$a) a_n = \frac{n³}{n³+1} $$</p>
+      </div>
+<!--DIV BOTAO-->
+      <div class="botao-exe">
+        <div class="inicio-ex">
+          <a href="#passo0" style="color: black">Passo a passo</a>
+        </div>
+
+        <div class="resposta">
+          <a href="#resposta" style="color: black">Gráfico</a>
+        </div>
+      </div>
+
+      <div class="img-conteudo" id="resposta">
+        <img src="GeoGebra-aE.png" />
+        <a href="#" class="passo-link">Fechar</a>    
     </div>
-</body>
+
+<!--DIV PASSO A PASSO-->
+
+      <div id="passo0" class="passo-content">
+        <a href="#passo1" class="passo-link">Passo 1</a>
+        <a href="#" class="passo-link">Fechar</a>
+      </div>
+
+      <div id="passo1" class="passo-content">
+        <p>
+          Para verificar a convergência, vamos analisar o comportamento da
+          sequência quando n tende ao infinito.
+        </p>
+        <a href="#passo2" class="passo-link">Passo 2</a>
+        <a href="#passo0" class="passo-link">Voltar</a>
+      </div>
+
+      <div id="passo2" class="passo-content">
+        <p>Dividindo o numerador e o denominador por n<sup>3</sup>, temos:</p>
+        <p>
+          an = {<sup>1</sup>&frasl;<sub>1 + 1/n<sup>3</sup></sub
+          >}
+        </p>
+        <a href="#passo3" class="passo-link">Resposta</a>
+        <a href="#passo1" class="passo-link">Voltar</a>
+      </div>
+
+      <div id="passo3" class="passo-content">
+        <p>Quando n tende ao infinito, 1/n<sup>3</sup> tende a 0, então:</p>
+        <br />
+        <p style="margin-left: 10%">lim<sub>n->∞</sub> an = 1</p>
+        <br />
+        <p>Portanto, a sequência converge para 1.</p>
+        <a href="#passo2" class="passo-link">Voltar</a>
+        <a href="#" class="passo-link">Fechar</a>
+      </div>
+
+      <hr />
+
+      <!--DIV EQUACAO-->
+
+      <div class="equation">
+        <p>$$ b) a_n = \frac{2n+1}{1-3 \sqrt{n}} $$</p>
+      </div>
+
+      <!--DIV BOTAO-->
+
+      <div>
+        <div class="botao-exe">
+          
+            <div class="inicio-ex">
+                <a href="#passo0.b" style="color: black">Passo a passo</a>
+            </div>
+
+            <div class="resposta">
+                <a href="#resposta.b" style="color: black">Gráfico</a>
+            </div>
+      </div>
+
+      <div class="img-conteudo" id="resposta.b">
+        <img src="GeoGebra-b.png" />
+        <a href="#" class="passo-link">Fechar</a>
+    </div>  
+
+  <!--DIV PASSO A PASSO-->
+      
+  <div id="passo0.b" class="passo-content">
+            <a href="#passo1.b" class="passo-link">Passo 1</a>
+            <a href="#" class="passo-link">Fechar</a>
+      </div>
+
+    
+      <div id="passo1.b" class="passo-content" >
+        <p>Para verificar a convergência, vamos analisar o comportamento da
+          sequência quando n tende ao infinito.
+        </p>
+    
+        <a href="#passo2.b" class="passo-link">Passo 2</a>
+        <a href="#passo0.b" class="passo-link">Voltar</a>
+      </div>
+
+      <div id="passo2.b" class="passo-content">
+        <p>Dividindo o numerador e o denominador por √n, temos:</p>
+        
+        <p>$$ a_n = \frac{2n+1}{1-3 \sqrt{n}} = \frac{2n /\sqrt{n} + 1/\sqrt{n}}{1/\sqrt{n} - 3} $$
+        </p>
+
+        <a href="#passo3.b" class="passo-link">Resposta</a>
+        <a href="#passo1.b" class="passo-link">Voltar</a>
+
+        </div>
+
+        <div id="passo3.b" class="passo-content">
+            <p>Quando n tende ao infinito, 1/√n tende a 0, então:</p>
+            <br />
+            <p>$$ lim_{n->∞}  a_n = -∞ $$</p>
+            <br />
+            <p>Portanto, a sequência é divergente.</p>
+            <a href="#passo2.b" class="passo-link">Voltar</a>
+            <a href="#" class="passo-link">Fechar</a>
+        </div> 
+
+        <hr />
+  </body>
 </html>
