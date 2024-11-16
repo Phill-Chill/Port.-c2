@@ -13,6 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 
@@ -54,7 +55,8 @@
             <br>
 
         <p class="texto-h4" style="text-align: center;">
-            <b>a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>, ..., a<sub>n</sub></b>
+            <p>$$ sequência = a_1, a_2, a_3, ... , a_n $$</p>
+           
         </p>
         
             <br>
@@ -378,8 +380,46 @@
     <h2>Séries</h2>
 
     <p class="texto-h2">
-        <p>A soma de termos ordenados é denominada série</p>
-        <p>$$ séries = a_1 + a_2 + a_3 + \ldots + a_n $$</p>
+        <p>A soma de termos ordenados é denominada série:</p>
+        <p>$$ séries = a_1 + a_2 + a_3 + ... + a_n $$</p>
+    </p>
+
+    <h3>Notação</h3>
+
+    <p class="texto-h3">
+        <p>Para representar uma série a seguinte notação é utilizada:</p>
+        <p>$$ \sum_{i=1}^{n} a_i = a_1 + a_2 + ... + a_n $$</p>
+        <p>O sigma representa que estamos calculando a soma dos termos, que serão definidos pela equação geral a<sub>i</sub>, e em seguida listamos os termos. 
+            Vale ressaltar que, ao fazer operações com termos, normalmente calculamos em pares. Aqui não será diferente, e com isso podemos introduzir a soma parcial <u>s<sub>n</sub></u>.</p>
+        <p>O S<sub>n</sub>será uma sequência, sendo que seu termo será a soma dos pares, ou seja:</p>
+        <P>$$ s_n = (a_1), (a_1 + a_2), ((a_1 + a_2) + a_3), ..., s_n $$</P>
+    </p>
+
+    <h3>Limite</h3>
+    <p class="texto-h3">
+
+        <p>
+            Utilizando, novamente, limites, deduziremos uma lei de formação que obedeça ao comportamento dos termos de s<bu>n</bu>. 
+            Entretanto, vamos começar desde o inicio, através de um exemplo, até chegarmos no limte do s<sub>n</sub>, caso exista:
+        </p>
+        
+    </p>
+
+    <h4>1- Exemplos:</h4>
+
+    <p class="texto-h4">
+        <p>$$\sum_{i=1}^{n} \frac{1}{n+1}-\frac{1}{n+2} ;$$</p>
+        <p>Calculando os primeiros termos:</p>
+        <p>$$ \sum_{i=1}^{n} = [\frac{1}{2} - \frac{1}{3}] + [\frac{1}{3} - \frac{1}{4}] + [\frac{1}{4} - \frac{1}{5}] + ... + [\frac{1}{n+1} - \frac{1}{n+2}]$$</p>
+        <p>Perceba que podemos cancelar a segunda parte da fração do termo geral com a primeira parte do seguinte termo, e vice-versa. Portanto, chegando na seguinte lei de formação:</p>
+        <p>$$ s_n = \frac{1}{2} - \frac{1}{n+2} $$</p>
+        <p>Por fim, calculando o limite:</p>
+        <p>$$ lim_{n->∞}\frac{1}{2} - \frac{1}{n+2}  = \frac{1}{2}$$</p>
+        <p>Assim chegamos que a soma dos infinitos termos é <sup>1</sup>&frasl;<sub>2</sub>.</p>
+        <p class="OBS">
+            <sup>*</sup><b>OBS:</b> Essa série chama-se de série telescópica.
+        </p>
+
     </p>
 </div>
 
