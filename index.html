@@ -410,7 +410,7 @@
     <p class="texto-h4">
         <p>$$\sum_{i=1}^{n} \frac{1}{n+1}-\frac{1}{n+2} ;$$</p>
         <p>Calculando os primeiros termos:</p>
-        <p>$$ \sum_{i=1}^{n} = [\frac{1}{2} - \frac{1}{3}] + [\frac{1}{3} - \frac{1}{4}] + [\frac{1}{4} - \frac{1}{5}] + ... + [\frac{1}{n+1} - \frac{1}{n+2}]$$</p>
+        <p>$$ \sum_{i=1}^{n} = \left[\frac{1}{2} - \frac{1}{3}\right] + \left[\frac{1}{3} - \frac{1}{4}\right] + \left[\frac{1}{4} - \frac{1}{5}\right] + ... + \left[\frac{1}{n+1} - \frac{1}{n+2}\right]$$</p>
         <p>Perceba que podemos cancelar a segunda parte da fração do termo geral com a primeira parte do seguinte termo, e vice-versa. Portanto, chegando na seguinte lei de formação:</p>
         <p>$$ s_n = \frac{1}{2} - \frac{1}{n+2} $$</p>
         <p>Por fim, calculando o limite:</p>
@@ -419,8 +419,63 @@
         <p class="OBS">
             <sup>*</sup><b>OBS:</b> Essa série chama-se de série telescópica.
         </p>
+    </p>
+
+    <h3>Testes de convergencia: quando termos positivos</h3>
+    <h4>I - Teste da divergência:</h4>
+
+   
+        <p class="texto-h4">Seja Σ a<sub>n</sub> com termos positivos. Se o limite de a<sub>n</sub> ≠ 0 ou ∄, entao a série diverge. </p>
+        <p class="texto-h4">Caso o limite seja igual a 0, nada pode ser determinado.</p>
+        <br>
+        <p>Ex.:</p>
+        <p>$$ \sum_{n=1}^{∞} \frac{2n + 1}{n-32} ⬌ lim_{n->∞}\frac{2n + 1}{n-32} = 2 ≠ 0 $$</p>
+        <p class="texto-h4">Utilizando o teste I verificamos que o limite da sequência é diferente de zero, consequentemente sua série diverge.</p>
+        <br>
+        <p>Ex.:</p>
+        <p>$$ \sum_{n=1}^{∞} \frac{1}{n}  \text{ ⬌ }  lim_{n->∞}\frac{1}{n} = 0 $$</p>
+        <p class="texto-h4">Utilizando o teste de convergência, verificamos que o limite da sequência converge para zero. 
+            Consequentemente, não podemos definir se a série converge ou diverge com este teste.
+             Entretanto, essa é uma série harmônica, portanto, não convergirá.</p>
+
+<hr>
+
+    <h4>II - Teste da integral:</h4>
+    <p class="texto-h4">Seja 'f' uma função contínua em [n,∞[ e Σ a<sub>n</sub>com termos positivos, tome a<sub>n</sub> = f(n).</p>
+    <div class="condition">
+    <p>$$ \small \text{a)} \int_{1}^{∞}f(n) \,dn \text{ convergir ⬌} \sum{a}{n} \text{ converge;} $$</p>
+    <p>$$ \small \text{b)} \int_{1}^{∞}f(n) \,dn \text{ divergir ⬌} \sum{a}{n} \text{ diverge.} $$</p>
+    </div>
+    <p class="OBS">
+        <sup>*</sup><b>OBS:</b>  Esse teste é somente classificatório. Utilizamos a integral definida para calcular a área abaixo da função, e se conseguirmos calcular essa área, é porque a função delimita uma região fechada.
+    </p>
+    <p>Ex.:</p>
+    <p>$$ \sum_{n=1}^{∞} \frac{1}{n^2+1} $$</p>
+    <p class="texto-h4">Os teste sào escolhidos com base na facilidade para solução dos problemas, então vamos usar o teste I:</p>
+    <p>$$ \sum_{n=1}^{∞} \frac{1}{n^2+1} \text{ ⬌ } lim_{n->∞} \frac{1}{n^2+1} = 0 \small \text{ : Inconclusivo}$$</p>
+    <p class="texto-h4">Apesar do primeiro teste falhar vamos verificar se trata-se de um série harmômica ou geométrica:</p>
+    <p>$$ \left[\frac{1}{n^2+1} \right]_{n=1}^{∞} = \frac{1}{2} \text{ , } \frac{1}{5} \text{ , } \frac{1}{10} \text{ , } ... \text{ , } \frac{1}{n^2+1} $$</p>
+    <p class="texto-h4">Percebe-se que não se trata nem de uma série harmômina e nem de um geométrica, com isso vamo utilizar o teste da integral:</p>
+    <p>$$ \sum_{n=1}^{∞} \frac{1}{n^2+1} \text{ ⬌ }  \int_{1}^{∞} \frac{1}{n^2+1} \, dn = \left[ arctg(n) \right]_1^t = arctg(t) - arctg(1) $$</p>
+    <p>$$ = lim_{n->∞} \left[arctg(t) - arctg(1) \right] = lim_{n->∞} \left[\frac{π}{2} - \frac{π}{4} \right] = \frac{π}{4} $$</p>
+    <p class="texto-h4">Utilizando o teste da integral, verificamos que a série converge. Contudo não sabemos para qual ponto.</p>
+    <p class="OBS" id="p-obs">
+
+        <sup>*</sup><b>OBS:</b>  Utilizando a integral podemos demonstrar a propriedade das p-séries,
+         entretanto para manter a orgamização deixarei este <a href="#p-serie" class="link-content">link</a> para descorrer sobre as p-séries.
+         
+         <div id="p-serie" class="passo-content" >
+                <a href="#" class="link-content">Fechar</a>
+        <p>Vamo analisar a seguinte série:</p>
+        <p>$$ \sum_{n=1}^{∞} \frac{1}{n^p} $$</p>
+        <p>Usando integral temos:</p>
+       
+    </div>
 
     </p>
+
+    
+
 </div>
 
 </body>

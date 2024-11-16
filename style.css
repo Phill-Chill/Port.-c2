@@ -149,6 +149,10 @@ h5 {
 
 .OBS {
   font-size: small;
+  background-color: #dbb3b3;
+  border-radius: 30px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .imagem {
@@ -246,4 +250,28 @@ h5 {
   width: 200px;
   padding: 5px;
   border-radius: 5px;
+}
+
+.condition {
+  display: block;
+  text-align: left;
+  width: 10px;
+  margin-left: 40px;
+}
+
+.link-content {
+  border-bottom: 2px dotted black;
+  cursor: pointer;
+  color: black;
+}
+
+#p-serie {
+  font-size: small;
+  background-color: #dbb3b3;
+  border-radius: 30px;
+  margin-bottom: 50px;
+}
+
+#p-obs {
+  margin-bottom: 0px;
 }
