@@ -471,12 +471,93 @@
         <p>Usando integral temos:</p>
        
     </div>
-
-    </p>
-
+    
     
 
-</div>
+    </p>
+    
+    <h3>Série de potencia</h3>
+        <p class="texto-h3">Agora que estamos familharizados com séries vamos trabalhar com a transformação de função em um somatório de termos infinitos</p>
+        <p> $$ f(x) = \sum_{n=0}^{∞} a_n (x-c)^n $$</p>
+    <h4>Notação</h4>
+        <p class="texto-h4">Para representar uma série de potência a seguinte notação é utilizada:</p>
+        <p> $$ \sum_{n=0}^{∞} a_n(x-c)^n $$</p>
+        <p class="condition">
+            <li>
+            <b>a<sub>n</sub></b>: é o coeficiente dos termos;
+            </li>
+            
+            <li>
+            <b>c</b> : é o centro da série;
+            </li>
+
+            <li>
+               <b>(x-c)</b>: é a base da série.
+            </li>
+
+            <li>
+                <b>x</b>: é uma variável.
+            </li>
+        </p>
+        <p>No geral queremos determinar os valores de x em que a série converge, portanto vamos para um exemplo:</p>
+        <br>
+        <p>Ex.: Para quais valores de X a série converge?</p>
+        <p></p>
+        <p>$$\sum_{n=0}^{∞}n! . x^n = \sum_{n=0}^{∞} n! . (x- 0)^n$$</p>
+        <p class="texto-h4">Primeiramente vamos verificar se a série converge e utilizando o teste
+            da razão temos:
+        </p>
+        <p>$$ b_n = n!. x^n \text{ ; } lim_{n \to ∞} \left|\frac{a_{n+1}}{b_n} \right|$$</p>
+        <p>$$ lim_{n \to ∞} \left| \frac{(n+1)! . x^{n+1}}{n! . x^n} \right| $$</p>
+        <p> $$ lim_{n \to ∞} (n+1) .\left| x \right| $$ </p>
+        <p class="condition">$$a) converge, x = 0 $$</p>
+        <p class="condition">$$b) diverge, x \neq 0 $$</p>
+        <p class="texto-h4">Verificamos, portanto, que somente quando x igual a zero a série convergirá.</p>
+        
+        <br>
+
+        <p>Ex.: Para quais valores de X a série converge?</p>
+        <p>$$ \sum_{n =0}^{∞} \frac{(x-3)^n}{n} = \sum_{n =0}^{∞} \frac{1 . (x-3)^n}{n}$$</p>
+        <p class="texto-h4">Primeiramente vamos verificar se a série converge e utilizando o teste
+            da razão temos:
+        </p>
+        <p>$$ b_n = \frac{(x-3)^n}{n} \text{ ; } 
+            lim_{n \to ∞} \left|\frac{(x - 3)^{n + 1}}{n + 1} . \frac{n}{(x - 3)^n} \right| $$
+        </p>
+        <p>$$  lim_{n \to ∞} \left| \frac{(x-3) . n}{n+1} \right| =  lim_{n \to ∞} \left| \frac{(x - 3)}{1+\frac{1}{n}} \right|$$</p>
+        <p class="texto-h4">Para que a série seja convergente, o limite deve ser menor que 1, portanto:</p>
+        <p class="condition">$$ |x - 3| < 1 $$</p>
+        <p class="texto-h4">Resolvendo a inequação chegaremos que:</p>
+        <p>$$ -1 < |x - 3| < 1 ⇒ 2 < x < 4 $$</p>
+        <p class="texto-h4">Pode parecer que achamos os valores de x, entretanto no teste da razáo quando o limite é igual a 1 não sabemos o que afirmar. Portanto vamos substituir na série x = 2 e depois x = 4.</p>
+        
+        <br>
+
+        <p class="texto-h4">* x = 2</p>
+        <p>$$ \sum_{n =0}^{∞} \frac{(2-3)^n}{n} = \sum_{n =0}^{∞} \frac{(-1)^n}{n} $$</p>
+        <p class="texto-h4">Pelo testa da série alternada convergirá.</p>
+
+        <br>
+
+        <p class="texto-h4">* x = 4</p>
+        <p>$$ \sum_{n =0}^{∞} \frac{(4-3)^n}{n} = \sum_{n =0}^{∞} \frac{1}{n} \text{ : série harmônica}  $$</p>
+    
+        <br>
+
+        <p class="texto-h4">Enfim, a série converge para x = 2 e diverge para x = 4, ficando o intervalo de convergência: 2 ≤ x < 4.</p>
+    
+        <br>
+        
+        <p>Com o intervalo podemos introduzir o conceito de Raio de convergência: é o tamanho do intervalo em relação ao centro da série.</p>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>  
 
 </body>
 
