@@ -465,17 +465,105 @@
          entretanto para manter a orgamização deixarei este <a href="#p-serie" class="link-content">link</a> para descorrer sobre as p-séries.
          
          <div id="p-serie" class="passo-content" >
-                <a href="#" class="link-content">Fechar</a>
-        <p>Vamo analisar a seguinte série:</p>
-        <p>$$ \sum_{n=1}^{∞} \frac{1}{n^p} $$</p>
-        <p>Usando integral temos:</p>
-       
-    </div>
+            <div class='link-container'>
+                <a href="#tipos" class="link-content">Fechar</a>
+            </div>
+                <p>Vamo analisar a seguinte série:</p>
+                <p>$$ \sum_{n=1}^{∞} \frac{1}{n^p} $$</p>
+                <p>Usando integral temos:</p>
+                <p>$$ \int_{0}^{∞} \frac{1}{x^p} \, dx $$</p>
+                <p>$$ \int_{0}^{∞} x^{-p} \, dx = \left. \frac{x^{-p +1}}{-p+1} \right|_{0}^{∞} $$</p>
+                <p>$$ \lim_{t \to ∞} \frac{t^{-p+1}}{-p+1} - \frac{0^{-p+1}}{-p+1}    = \lim_{t \to ∞} \frac{t^{1-p}}{1-p}$$</p>
+                <p>$$ \lim_{t \to ∞} \frac{t^{1-p}}{1-p} = \begin{cases} \infty & \text{se } p > 1 \\ \frac{1}{1-p} & \text{se } p < 1 \end{cases} $$</p>
+                <p>Para p = 1 teremos uma indeterminação. Substituimos x por t para avaliarmos o limite do t tendendo ao infinito, pois como infinito não é um numero não podemos substituir no n.</p>
     
+                      
+        </div>
+        
+        <hr>  
+    </p>
+
+    <h4> III - Teste da comparação:</h4>
+    <p class="texto-h4">Sejam Σ a<sub>n</sub> e Σ b<sub>n</sub>, sendo que b<sub>n</sub> é obtido separando os termos de maior grau do denominador e numerador de a<sub>n</sub>, com a<sub>n</sub> e b<sub>n</sub> tendo termos positivos ∀n. 
+    </p>
+    
+    <div class = 'condition'>
+        <p>$$ \small \text{a)} \sum{b}{n} \text { convergir e } a_{n} ≤ b_{n}  \text{ ⬌ } \sum{a}{n} \text{ converge;} $$</p>
+        <p>$$ \small \text{b)} \sum{b}{n} \text { divergir e } a_{n} > b_{n}  \text{ ⬌ } \sum{a}{n} \text{ diverge;} $$</p>
+    </div>
+
+            <p class="OBS">
+            <sup>*</sup><b>OBS:</b> Qualquer outro caso é inconclusivo, utilizando esse teste.
+        </p>    
+
+        <p>Ex.:</p>
+        <p>$$ \sum_{n=1}^{∞} \frac{n}{n^3 + 1} $$</p>
+        <p class="texto-h4"> Novamente, utilizando o teste I, verificamos que o limite da sequência converge para zero. Resolver integrando seria muito complexo, então vamos utilizar o teste da comparação:</p></p>
+        
+        <p>$$ \sum_{n=1}^{∞} a_n = \frac{n}{n^3+1} \text{ ⬌ } \sum_{n=1}^{∞} b_n = \frac{n}{n^3} = \frac{1}{n^2} $$</p>
+        
+        <p class="texto-h4">Percebe-se que b<sub>n</sub> é uma p-série que converge. Agora analisando os termos:</p>
+        <p>$$ \left[ \frac{n}{n^3+1} \text{ [≤]  ou  [>] }  \frac{1}{n^2} \right] \text{ ⮕}_{n = 1} \text{ ⮕} \left[\frac{1}{2} < 1\right] 
+           \text{ ⮕}_{n = 2} \text{ ⮕} \left[\frac{2}{9} < \frac{1}{4} \right] ... $$</p>
+        
+
+        <img src="Teste_III.png" class="imagem">
+        <p class = 'texto-h4'>Como a sequência b<sub>n</sub> converge, e a<sub>n</sub> é menor que b<sub>n</sub> ∀n, então a sequência a<sub>n</sub> converge.</p>
+
+        <p class="OBS">
+            <sup>*</sup><b>OBS:</b> Para respresentar os termos em um gráfico não podemos conectar os pontos. </p>
+    
+    
+        <h4>IV - Teste da comparação no limite:</h4>   
+
+        <p>Nesse teste, utilizaremos um caminho parecido com o teste anterior, com alteração na verificação de termo a termo para verificar o limite de:</p>
+        <p>$$ \lim_{n->∞} \frac{a_n}{b_n} = L$$</p>
+        <div class='condition'>
+            <p>$$ \small \text{a)} L > 0 \text{ e} \sum{b}{n} \text{ convergir ⬌ } \sum{a}{n} \text{ converge;} $$</p>
+            <p>$$ \small \text{b)} L = 0 \text{ e} \sum{b}{n} \text{ convergir ⬌ } \sum{a}{n} \text{ converge;} $$</p>
+            <p>$$ \small \text{c)} L : ∞ \text{ e} \sum{b}{n} \text{ divergir ⬌ } \sum{a}{n} \text{ diverge;} $$</p>    
+            <p>$$ \small \text{d)} L > 0 \text{ e} \sum{b}{n} \text{ divergir ⬌ } \sum{a}{n} \text{ diverge;} $$</p>
+        </div>
+
+        <p>Ex.:</p>
+
+        <p>$$ \sum_{n=1}^{∞} \frac{3n + 2}{2n^3 + 5n} $$</p>
+        <p class="texto-h4">A partir de um momento ficaremos mais acertivos quanto ao teste que será utilizado, portanto vamos aplicar o teste IV:</p>
+        <p>$$ \sum a_n = \frac{3n + 2}{2n^3 + 5n} \text{ ⬌ } \sum b_n = \frac{1}{n^2} $$</p>
+        <p class="texto-h4"> Novamente, b<sub>n</sub> é uma p-série que converge. Analisando o limite:</p>
+        <p>$$ \lim_{n->∞} \frac{ \frac{3n + 2}{2n^3 + 5n}}{\frac{1}{n^2}} \text{ ⬌ } \lim_{n->∞} \frac{(3n + 2) . n^2}{2n^3 + 5} \text{ ⬌ } \lim_{n->∞} \frac{3n^3 + 2n^2}{2n^3 + 5} =\frac{3}{2} > 0 $$</p>
+        <p class="texto-h4">Como o limite é maior que zero, e a sequência b<sub>n</sub> converge, então a sequência a<sub>n</sub> converge. <small>*a)</small></p>
+    
+        <h3>Testes de convergencia: quando termos positivos e negativos</h3>
+    
+            <p>Para séries com termos negativos e positivos, utilizamos os teste de 5 a 8:</p>
+            
+            <h4>V - Teste da alternada:</h4>
+            <p>Seja Σ a<sub>n</sub> com termos alternados, ou seja, a<sub>n</sub> = (-1)<sup>n-1</sup>, com a<sub>n+1</sub> ≤ a<sub>n</sub> ∀n e o limite igual a 0 o Σ a<sub>n</sub> converge.
+            
+            <p>Ex.:</p>
+                <p>$$ \sum{(-1)^n \frac{1}{n+1}} $$</p>
     
 
     </p>
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <h3>Série de potencia</h3>
         <p class="texto-h3">Agora que estamos familharizados com séries vamos trabalhar com a transformação de função em um somatório de termos infinitos</p>
         <p> $$ f(x) = \sum_{n=0}^{∞} a_n (x-c)^n $$</p>
@@ -550,13 +638,52 @@
         
         <p>Com o intervalo podemos introduzir o conceito de Raio de convergência: é o tamanho do intervalo em relação ao centro da série.</p>
     
+        <br>
+
+        <p> Ex.: Para a série $$ \sum_{n=0}^{∞} \frac{(-1)^n}{n+1} . x^n = \sum_{n= 0}^{∞} \frac{(-x - 0)^n}{n + 1}$$ </p>
+        <p>$$ b_n = \frac{x^n}{n+1} \text{ ; } lim_{n \to ∞} \left| \frac{x^{n+1}}{n+2} . \frac{n+1}{x^n} \right| $$</p>
+        <p>$$ lim_{n \to ∞} \left| \frac{x . (n + 1)}{n+2} \right| = \left| x \right| . lim_{n \to ∞}  \frac{n + 1}{n+2} = \left| x \right| . lim_{n \to ∞}  \frac{ 1 +\frac {1}{n}}{1 +\frac{2}{n}} = x$$</p>
+        <p>Sabemos que essa serie esta centrada em 0, portanto o raio de convergência é . Agora para o intervalo terá que ser avaliados as extremidades, e você chegará em:</p>
+        <p>$$ |x| < 1 ⇒ -1 < x ≤ 1 ; intervalo: (-1, 1]$$</p>
+       
+        <h4>Representações de Funções como Séries de Potências</h4>
     
-    
-    
-    
-    
-    
-    
+        <p class="texto-h4">Veremos mais tarde que essa estratégia é útil para integrar funções que não têm antiderivadas elementares, para resolver as equações diferenciais e para aproximar funções por polinômios.</p>
+        <p class="texto-h4">Para representar uma função como uma série de potências, é necessário que a função seja analítica em um intervalo aberto em torno de um ponto. A série geométrica é um exemplo fundamental de série de potências, pois sua soma converge para a função 
+$$ f(x) = \frac{1}{1 - x} $$
+              quando ∣x∣<1. Essa relação nos permite expandir funções mais complexas em séries de potências, desde que elas compartilhem propriedades de convergência semelhantes.</p>
+        <p>$$ \sum_{n=0}^{∞} x^n = \frac{1}{1 - x}$$</p>
+        <p class="texto-h4">Vamos solucionar um exemplo, para entendermos:</p>
+
+        <br>
+
+        <p>Ex.: Represente a função f(x) como uma série de potência.</p>
+        <p>$$ f(x) = \frac{1}{5 + x}  $$</p>
+        <p>Vamos tentar nos aproximar da função da soma parcial de uma série geométrica:</p>
+        <p>$$ f(x) = \frac{1}{5(1 + \frac{x}{5})} = \frac{1}{5} . \frac{1}{1 - (-\frac{x}{5})}$$</p>
+        <p>$$ k = (-\frac{x}{5}) ⇒ f(x) = \frac{1}{5} . \frac{1}{1 -k}$$</p>
+        <p>$$ f(x) = \frac{1}{5} . \sum_{n=0}^{∞} k^n = \frac{1}{5} . \sum_{n=0}^{∞} \left(-\frac{x}{5} \right)^n$$</p>
+        <p>$$ f(x) = \sum_{n=0}^{∞} (-1)^n . \frac{x^n}{5^{n+1}}$$</p>
+        <p>Perceba que fizemos uma substituição para que a função se aproximasse de uma série geométrica, e assim conseguimos representar a função f(x) como uma série de potência.</p>
+        
+        <h4>Integração e derivação de séries de potências</h4>
+
+        <p>Sabemos que, sob certas condições, a integral da soma é igual à soma das integrais, e o mesmo vale para a derivação. Isso nos leva a perguntar: será que podemos obter novas séries de potências integrando ou derivando séries conhecidas? A resposta é sim! Por exemplo, voltando na função base para as repesentações:</p>
+        <p>$$ \int \sum_{n=0}^{∞} x^n = \int \frac{1}{1 - x}$$</p>
+        <p>$$ \sum_{n=0}^{∞} \frac{x^{n+1}}{n+1} = -ln(1 - x)$$</p>
+        <p>$$ E $$</p>
+        <p>$$ \frac{d}{dx} \sum_{n=0}^{∞} x^n = \frac{d}{dx} \frac{1}{1 - x}$$</p>
+        <p>$$ \sum_{n=0}^{∞} n . x^{n-1} = \frac{1}{(1 - x)^2}$$</p>
+        <p>Pelo Teorema de Derivação e Integração Termo a Termo de Séries de Potências, podemos derivar ou integrar termo a termo uma série de potências dentro de seu raio de convergência. Isso nos permite utilizar técnicas aprendidas em Cálculo I, como derivadas e integrais de polinômios, para manipular séries de potências.</p>
+            
+        <br>
+
+        <p class="OBS">
+            <sup>*</sup><b>OBS:</b> A integração ou derivação pode mudar o intervalo de convergência da série nas extremidades, portanto é importante verificar se a série resultante converge no mesmo intervalo que a série original.
+        </p>
+
+        <h4>Série de Taylor</h4>
+
     </div>  
 
 </body>
