@@ -682,7 +682,57 @@ $$ f(x) = \frac{1}{1 - x} $$
             <sup>*</sup><b>OBS:</b> A integração ou derivação pode mudar o intervalo de convergência da série nas extremidades, portanto é importante verificar se a série resultante converge no mesmo intervalo que a série original.
         </p>
 
-        <h4>Série de Taylor</h4>
+        <h4>Série de Taylor e Mclauren</h4>
+
+ <p>Vimos que podemos representar funções como séries de potências através da soma parcial de uma série geométrica, que é um caso particular de série de potências. 
+    No entanto, nem sempre é possível ou prático representar uma função diretamente a partir de uma série geométrica. Para esses casos, utilizamos a série de Taylor</p>
+    <p>$$ f(x) = \sum_{n=0}^{∞} \frac{f^{(n)}(a)}{n!} . (x - a)^n $$</p>
+
+
+
+    <p>Para o caso de a = 0, temos a série de Maclaurin:</p>
+    <p>$$ f(x) = \sum_{n=0}^{∞} \frac{f^{(n)}(0)}{n!} . x^n $$</p>
+    <h3>Notação</h3>
+    <p>Para representar uma série de Taylor a seguinte notação é utilizada:</p>
+    <p class="condition">
+        
+        $$ 
+        * f^{(n)}(a) 
+        \text{ : é a derivada de ordem n-ésima da função f(x) avaliada no ponto a;	
+        }$$
+        $$ * (x - a)^n : \text{ é a potência da série;} $$
+       
+    </p>
+
+    <br>
+
+    <p>Ex.:</p>
+
+    <br>
+
+    <p>
+        Vamos expandir a função 
+        f(x) = sin(x) em torno de x = 0 
+        (série de Maclaurin, que é um caso especial da série de Taylor com a = 0).
+    </p>
+    <p> 
+        Já que estamos trabalhando com uma série que depende da derivada das função, vamo derivar:
+    </p>
+    <p> 
+        $$ f(0) = sin(0) = 0 \text{ ⇒ } f'(0) = cos(0) = 1 \text{ ⇒ } $$ $$ f''(0) = -sin(0) = 0 \text{ ⇒ } f'''(0) = -cos(0) -1 \text{ ⇒ } f''''(0) = sin(0) = 0 $$ $$ \text { ⇒ } ...$$
+    </p>
+    <p> Substituindo na série de Maclaurin:</p>
+
+    <p class = "condition"> 
+        $$ sin(x) = \sum^∞_{n = 0} \frac{f^{(n)}(0)}{n!} . x^n = f(0) + f'(0) . x + \frac{f''(0)}{2!} . x^2 + \frac{f'''(0)}{3!} . x^3 + ...$$
+        $$ sin(x) = 0 + 1 . x + 0 + \frac{-1}{3!} . x^3 + 0 + \frac{1}{5!} . x^5 + ...$$
+    </p>
+    <p>Simplificando a série de Maclaurin, obtemos:</p>
+    <p>$$ sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + ...$$</p>
+    <p> Enfim fechando a série ficamos que:</p>
+    <p>$$ sin(x) = \sum^∞_{n = 0} (-1)^n \frac{x^{2n + 1}}{(2n + 1)!} $$</p>
+
+    <h2>Equações Diferenciais Ordinnárias (EDO)</h2>	
 
     </div>  
 
