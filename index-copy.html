@@ -1,181 +1,176 @@
 <!DOCTYPE html>
-
-<html lang="pt-br">
-
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portifólio Cálculo 2</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Transformadas de Laplace Fundamentais</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body{  background-color: rgb(92, 98, 77);
+                margin-top: 100px;
+            }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .box{
+            background-color: antiquewhite;
+            
+        }
+        header{
+        background-color: grey;
+        color: white;
+        box-shadow: inset 0 0 10px black;
+        text-align: center;
+        padding: 5px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        }
+    </style>
+    
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Cálculo 2</a>
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Exercicios</button>
-                <ul class="dropdown-menu">
-                    <li><button class="dropdown-item" type="button">Limites</button></li>
-                    <li><button class="dropdown-item" type="button">Rituais</button></li>
-                    <li><button class="dropdown-item" type="button">Sobre a filosofia da lufifer</button></li>
-                </ul>
-            </div>
-        </nav>
+        <h1>Tabela de Transformadas de Laplace Fundamentais</h1>
     </header>
-
-    <h2>Sequências</h2>
-
-    <p>Uma sequência é caracterizada por uma ordem lógica de números ou letras:</p>
-
     <p>
-        a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>, ..., a<sub>n</sub>
+        A seguir, apresentamos uma tabela com as transformadas de Laplace mais comuns, incluindo a função no domínio do tempo \( f(t) \), sua transformada \( F(s) \) e o cálculo correspondente.
     </p>
 
-    <p>Cada 'a<sub>x</sub>' é chamado de termo e o número variando de 1 a 'n' é a posição do termo.</p>
+    <div class="box">
+    <table>
+        <thead>
+            <tr>
+                <th>Função \( f(t) \)</th>
+                <th>Transformada \( F(s) \)</th>
+                <th>Cálculo da Transformada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Linha 1: Função constante -->
+            <tr>
+                <td>\( f(t) = 1 \)</td>
+                <td>\( F(s) = \frac{1}{s} \)</td>
+                <td>
+                    $$
+                    \mathcal{L}\{1\} = \int_0^\infty 1 \cdot e^{-st} \, dt = \left[ -\frac{e^{-st}}{s} \right]_0^\infty = \frac{1}{s}
+                    $$
+                </td>
+            </tr>
 
-    <h3>Notação</h3>
+            <!-- Linha 2: Função exponencial -->
+            <tr>
+                <td>\( f(t) = e^{at} \)</td>
+                <td>\( F(s) = \frac{1}{s - a} \)</td>
+                <td>
+                    $$
+                    \mathcal{L}\{e^{at}\} = \int_0^\infty e^{at} e^{-st} \, dt = \int_0^\infty e^{-(s - a)t} \, dt = \frac{1}{s - a}
+                    $$
+                </td>
+            </tr>
 
-    <p>Para representar uma sequência a seguinte notação é utilizada:</p>
-    <p>a<sub>n</sub> = {a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>, ..., a<sub>n</sub>}.</p>
-    <p>O a<sub>n</sub>​ é o termo geral da sequência; é a equação que mostra como a sequência se comporta em função de
-        n. Por exemplo:</p>
-    <p>a<sub>n</sub> = {
-        1,
-        <sup>1</sup>&frasl;<sub>2</sub> ,
-        <sup>1</sup>&frasl;<sub>4</sub> ,
-        <sup>1</sup>&frasl;<sub>8</sub> ,
-        ... ,
-        <sup>1</sup>&frasl;<sub>2<sup>n</sup></sub> }
+            <!-- Linha 3: Função seno -->
+            <tr>
+                <td>\( f(t) = \sin(\omega t) \)</td>
+                <td>\( F(s) = \frac{\omega}{s^2 + \omega^2} \)</td>
+                <td>
+                    $$
+                    \mathcal{L}\{\sin(\omega t)\} = \int_0^\infty \sin(\omega t) e^{-st} \, dt = \frac{\omega}{s^2 + \omega^2}
+                    $$
+                </td>
+            </tr>
 
-    </p>
-    <p>Nesta sequência, cada termo é dado pela fórmula <u><span
-                title="Para a dedução da equação geral da sequência é necessário a identificação de padrões em relação a um termo e seus sucessores">a<sub>n</sub>
-                = <sup>1</sup>&frasl;<sub>2<sup>n</sup></sub></span></u>, que representa o comportamento da sequência
-        como um todo. Esta expressão é a nossa equação geral da sequência.
-    </p>
+            <!-- Linha 4: Função cosseno -->
+            <tr>
+                <td>\( f(t) = \cos(\omega t) \)</td>
+                <td>\( F(s) = \frac{s}{s^2 + \omega^2} \)</td>
+                <td>
+                    $$
+                    \mathcal{L}\{\cos(\omega t)\} = \int_0^\infty \cos(\omega t) e^{-st} \, dt = \frac{s}{s^2 + \omega^2}
+                    $$
+                </td>
+            </tr>
 
-    <p> Portanto, o a<sub>n</sub> é igual a <sup>1</sup>&frasl;<sub>2<sup>n</sup></sub>, assim a partir dessa lei de
-        formação é possível determinar qualquer termo de acordo com sua posição n. Com isso, em <span
-            title="Cálculo 2">C2</span> estudaremos sequência com n tendendo ao infinito, o que implica que sempre
-        haverá um termo sucessor (a<sub>n+1</sub>).</p>
+            <!-- Linha 5: Função potência \( t^n \) -->
+            <tr>
+                <td>\( f(t) = t^n \) (para \( n \geq 0 \))</td>
+                <td>\( F(s) = \frac{n!}{s^{n+1}} \)</td>
+                <td>
+                    $$
+                    \mathcal{L}\{t^n\} = \int_0^\infty t^n e^{-st} \, dt = \frac{n!}{s^{n+1}}
+                    $$
+                </td>
+            </tr>
 
-    <h3>
-        Limites
-    </h3>
-    <p>
-        Começaremos por limites, como estamos trabalhando com sequências infinitas principalmente com o objetivo de
-        descobrir se
-        ela tem um fim, tentando determinar sua convergência.
-    </p>
-    <h4>
-        Convergência
-    </h4>
-    <p>
-        Para continuarmos é necessário ter conhecimento prévio sobre cálculo 1, pois utilizaremos ferramentas como:
-        Limites, derivados e integrais.
-    </p>
+            <!-- Linha 6: Função degrau unitário -->
+            <tr>
+                <td>\( f(t) = u(t - a) \)</td>
+                <td>\( F(s) = \frac{e^{-as}}{s} \)</td>
+                <td>
+                    $$
+                    \mathcal{L}\{u(t - a)\} = \int_a^\infty e^{-st} \, dt = \frac{e^{-as}}{s}
+                    $$
+                </td>
+            </tr>
 
-    <p>A convergência é determinada calculando o limite do termo geral com n tendendo ao infinito, sendo que, caso o
-        <span title="Limite"><u>Lim</u></span> seja um número que pertence ao numeros reais entao classificamos essa sequência
-        como convergente.
-    </p>
-    <p>Pela definição, temos:</p>
-    <p>Se Lim<sub>n->∞</sub>a<sub>n</sub> = L, então a<sub>n</sub> converge para L. Caso contrario, essa sequência
-        diverge.</p>
+            <!-- Linha 7: Função impulso (Delta de Dirac) -->
+            <tr>
+                <td>\( f(t) = \delta(t - a) \)</td>
+                <td>\( F(s) = e^{-as} \)</td>
+                <td>
+                    $$
+                    \mathcal{L}\{\delta(t - a)\} = \int_0^\infty \delta(t - a) e^{-st} \, dt = e^{-as}
+                    $$
+                </td>
+            </tr>
 
-    <h4>
-        1- Exemplos
-    </h4>
-    <small>
-        <hr>
-        <!--EXEMPLO a)-->
-        <p>
-            <b>a)</b> {<sup>1</sup>&frasl;<sub>2<sup>n</sup></sub>}<sup>∞</sup><sub>n = 1</sub> = {1 ,
-            <sup>1</sup>&frasl;<sub>2</sub> , <sup>1</sup>&frasl;<sub>4</sub> , ... ,
-            <sup>1</sup>&frasl;<sub>2<sup>n</sup></sub>}
-        </p>
-        <ul>
-            <li>
-                Termo geral (a<sub>n</sub>) = <sup>1</sup>&frasl;<sub>2<sup>n</sup></sub>;
-            </li>
-            <li>
-                Tome, lim<sub>n->∞ </sub>a<sub>n</sub> como L;
+            <!-- Linha 8: Função exponencial multiplicada por \( t^n \) -->
+            <tr>
+                <td>\( f(t) = t^n e^{at} \)</td>
+                <td>\( F(s) = \frac{n!}{(s - a)^{n+1}} \)</td>
+                <td>
+                    $$
+                    \mathcal{L}\{t^n e^{at}\} = \int_0^\infty t^n e^{at} e^{-st} \, dt = \frac{n!}{(s - a)^{n+1}}
+                    $$
+                </td>
+            </tr>
 
-            </li>
-            <li>
-                lim<sub>n->∞ <sup>1</sup>&frasl;<sub>2<sup>n</sup></sub> = 0;
-            </li>
-        </ul>
-        <p>Portanto, essa sequência converge converge para 0. </p>
-        <img src="GeoGebra.png" width="600px">
-        <p>Note que, à medida que n aumenta, o valor de Y se aproxima cada vez mais de 0.</p>
-        <!--EXEMPLO b)-->
-        <hr>
-        <p>
-            <b>b)</b>
-            {<sup>2<sup>n</sup></sup>&frasl;<sub>n</sub><sup>+1</sup>&frasl;<sub>n</sub>}<sup>∞</sup><sub>n=1</sub> =
-            {3, <sup>5</sup>&frasl;<sub>2</sub>, <sup>9</sup>&frasl;<sub>3</sub>, ...}
-        </p>
-        <ul>
-            <li>
-                Termo geral (a<sub>n</sub>) =
-                <sup>2<sup>n</sup></sup>&frasl;<sub>n</sub><sup>+1</sup>&frasl;<sub>n</sub>
-            </li>
-            <li>
-                Tome, lim<sub>n->∞</sub> a<sub>n</sub> como L;
-            </li>
-            <li>
-                lim<sub>n->∞</sub> <sup>2<sup>n</sup></sup>&frasl;<sub>n</sub><sup>+1</sup>&frasl;<sub>n</sub> = ∞;
-            </li>
-        </ul>
-        <p>
-            Portanto, a sequência diverge.
-        </p>
+            <!-- Linha 9: Função seno amortecido -->
+            <tr>
+                <td>\( f(t) = e^{at} \sin(\omega t) \)</td>
+                <td>\( F(s) = \frac{\omega}{(s - a)^2 + \omega^2} \)</td>
+                <td>
+                    $$
+                    \mathcal{L}\{e^{at} \sin(\omega t)\} = \int_0^\infty e^{at} \sin(\omega t) e^{-st} \, dt = \frac{\omega}{(s - a)^2 + \omega^2}
+                    $$
+                </td>
+            </tr>
 
-        <img src="GeoGebra-a.png" width="600px">
-        <p>Note que, à medida que n aumenta, o valor de Y não converge para um ponto.</p>
-        <hr>
-    </small>
-    <h3>
-        Comportamentos sequenciais
-    </h3>
-    <h4>
-        <u>Sequência decrescente</u>
-    </h4>
-
-    <p>
-        Dada uma sequência qualquer a<sub>n</sub>, caso a<sub>n+1</sub> ≤ a<sub>n</sub> <b>∀n</b>, então dizemos que é
-        uma sequência decrescente.
-    </p>
-    <h5>
-        *Sequência estritamente decrescente: Atende à mesma condição de uma sequência decrescente, exceto que, para todo
-        n, cada termo é sempre maior que seu sucessor.
-
-    </h5>
-    <h4>
-        <u>Sequência crescente</u>
-    </h4>
-    <p>
-        Dada uma sequência qualquer a<sub>n</sub>, caso a<sub>n+1</sub> ≥ a<sub>n</sub> <b>∀n</b>, então dizemos que é
-        uma sequência decrescente.
-
-    </p>
-
-    <h5>
-        *Sequência estritamente decrescente: Atende à mesma condição de uma sequência crescente, exceto que, para todo
-        n, cada termo é sempre menor que seu sucessor.
-
-    </h5>
-
-    <p>
-        <b>Sequência monótona:</b> Quando uma sequência pode ser classificada como crescente ou decrescente, chamamos
-        essa sequência de monótona.
-    </p>
-    <a href="sequência.html">Exercicios</a>
+            <!-- Linha 10: Função cosseno amortecido -->
+            <tr>
+                <td>\( f(t) = e^{at} \cos(\omega t) \)</td>
+                <td>\( F(s) = \frac{s - a}{(s - a)^2 + \omega^2} \)</td>
+                <td>
+                    $$
+                    \mathcal{L}\{e^{at} \cos(\omega t)\} = \int_0^\infty e^{at} \cos(\omega t) e^{-st} \, dt = \frac{s - a}{(s - a)^2 + \omega^2}
+                    $$
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
 </body>
-
 </html>

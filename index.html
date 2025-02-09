@@ -26,7 +26,7 @@
                 <button class="dropbtn">Exercício</button>
                 <div class="dropdown-content">
                     <a href="sequencia.html">Sequência</a>
-                    <a href="#">Link 2</a>
+                    <a href="index-copy.html" target="_blank" rel="noopener noreferrer">Link 2</a>
                     <a href="#">Link 3</a>
                 </div>
             </div>
@@ -1253,6 +1253,169 @@ $$ f(x) = \frac{1}{1 - x} $$
         </ol>
     </p>
 
+    
+
+
+
+
+    <h2>Método das Séries de Potências: Método de Frobenius e Equação Indicial</h2>
+
+    <p>
+        O <strong>método das séries de potências</strong>, especificamente o <strong>Método de Frobenius</strong>, é uma técnica utilizada para resolver equações diferenciais lineares de segunda ordem quando o método padrão de séries de potências não é suficiente. 
+        Esse método é útil quando o ponto em torno do qual a solução é expandida (geralmente \( x = 0 \)) é um <strong>ponto singular regular</strong> da equação diferencial.
+    </p>
+
+    <h3>Contexto Geral</h3>
+    <p>
+       Retornando na forma geral das EDO's de segunda ordem:
+        $$
+        y'' + P(x)y' + Q(x)y = 0
+        $$
+    </p>
+        <p>
+    Se \( x = 0 \) é um ponto singular regular, então \( xP(x) \) e \( x^2Q(x) \) são analíticas em \( x = 0 \), ou seja, podem ser expressas como séries de potências convergentes em torno de \( x = 0 \).
+    </p>
+
+    <h3>Método de Frobenius</h3>
+    <p>
+        O método de Frobenius busca soluções na forma de uma série de potências generalizada:
+        $$
+        y(x) = x^r \sum_{n=0}^\infty a_n x^n = \sum_{n=0}^\infty a_n x^{n+r}
+        $$
+        Onde:
+        <ul>
+            <li>\( r \) é um número chamado <strong>expoente característico</strong> ou <strong>índice</strong>.</li>
+            <li>\( a_n \) são coeficientes a serem determinados.</li>
+            <li>\( x^r \) é o fator que permite lidar com singularidades.</li>
+        </ul>
+    </p>
+
+    <h3>Equação Indicial</h3>
+    <p>
+        Ao substituir a série de potências na equação diferencial, obtemos uma relação de recorrência para os coeficientes \( a_n \). No entanto, antes de determinar os coeficientes, é necessário encontrar o valor de \( r \). Isso é feito através da <strong>equação indicial</strong>, que é uma equação algébrica obtida igualando o coeficiente do termo de menor potência (geralmente \( x^{r-2} \)) a zero.
+    </p>
+    <p>
+        A equação indicial é dada por:
+        $$
+        r(r-1) + p_0 r + q_0 = 0
+        $$
+        Onde:
+        <ul>
+            <li>\( p_0 \) é o coeficiente de \( x^{-1} \) na expansão de \( xP(x) \).</li>
+            <li>\( q_0 \) é o coeficiente de \( x^{-2} \) na expansão de \( x^2Q(x) \).</li>
+        </ul>
+        A equação indicial é uma equação quadrática em \( r \), e suas raízes \( r_1 \) e \( r_2 \) determinam a forma das soluções.
+    </p>
+
+    <h3>Casos Possíveis</h3>
+    <p>
+        Dependendo das raízes da equação indicial, temos três casos principais:
+    </p>
+    <ol>
+        <li>
+            <strong>Raízes distintas que não diferem por um inteiro</strong>:
+            <ul>
+                <li>Neste caso, duas soluções linearmente independentes podem ser obtidas diretamente do método de Frobenius, uma para cada valor de \( r \).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Raízes iguais</strong>:
+            <ul>
+                <li>Quando \( r_1 = r_2 \), uma solução é obtida diretamente, e a segunda solução envolve um termo logarítmico.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Raízes que diferem por um inteiro</strong>:
+            <ul>
+                <li>Quando \( r_1 - r_2 \) é um inteiro, uma solução é obtida diretamente, e a segunda solução pode envolver um termo logarítmico ou uma manipulação adicional da série.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>Exemplo</h3>
+    
+    <p>Vamos resolver a seguinte equação diferencial usando o <strong>método de Frobenius</strong>:</p>
+
+    $$ x y'' + y' + y = 0 $$
+
+    <h4>Passo 1: Supondo a Solução na Forma de Frobenius</h4>
+
+    <p>Assumimos que a solução tem a forma:</p>
+
+    $$ y(x) = \sum_{n=0}^{\infty} a_n x^{n+r} $$
+
+    <p>Derivamos essa série:</p>
+
+    $$ y'(x) = \sum_{n=0}^{\infty} a_n (n+r) x^{n+r-1} $$
+
+    $$ y''(x) = \sum_{n=0}^{\infty} a_n (n+r)(n+r-1) x^{n+r-2} $$
+
+    <h4>Passo 2: Substituindo na Equação Diferencial</h4>
+
+    <p>Substituímos \( y(x) \), \( y'(x) \) e \( y''(x) \) na equação diferencial:</p>
+
+    $$ x \sum_{n=0}^{\infty} a_n (n+r)(n+r-1) x^{n+r-2} + \sum_{n=0}^{\infty} a_n (n+r) x^{n+r-1} + \sum_{n=0}^{\infty} a_n x^{n+r} = 0 $$
+
+    <p>Ajustando os expoentes:</p>
+
+    $$ \sum_{n=0}^{\infty} a_n (n+r)(n+r-1) x^{n+r-1} + \sum_{n=0}^{\infty} a_n (n+r) x^{n+r-1} + \sum_{n=0}^{\infty} a_n x^{n+r} = 0 $$
+
+    <p>Agrupando:</p>
+
+    $$ \sum_{n=0}^{\infty} \left[ a_n (n+r)(n+r-1) + a_n (n+r) + a_n x \right] x^{n+r-1} = 0 $$
+
+    <h4>Passo 3: Encontrando a Equação Indicial</h4>
+
+    <p>A equação indicial vem dos termos de menor potência:</p>
+
+    $$ a_0 \left[ r(r-1) + r \right] = 0 $$
+
+    $$ r(r-1) + r = 0 $$
+
+    $$ r^2 = 0 $$
+
+    <p>Portanto, a solução tem uma raiz dupla:</p>
+
+    $$ r = 0 $$
+
+    <h4>Passo 4: Encontrando a Relação de Recorrência</h4>
+
+    <p>A relação entre os coeficientes vem da equação:</p>
+
+    $$ a_n (n+r)(n+r-1) + a_n (n+r) + a_n = 0 $$
+
+    <p>Substituindo \( r = 0 \):</p>
+
+    $$ a_n \left[ n(n-1) + n + 1 \right] = 0 $$
+
+    $$ a_n (n^2 + 1) = 0 $$
+
+    <p>Assim, obtemos a relação de recorrência:</p>
+
+    $$ a_n = -\frac{a_{n-1}}{n^2+1} $$
+
+    <h4>Passo 5: Construindo a Solução</h4>
+
+    <p>Escolhendo \( a_0 = 1 \), calculamos os primeiros termos:</p>
+
+    $$ a_1 = -\frac{1}{1^2 + 1} = -\frac{1}{2} $$
+
+    $$ a_2 = -\frac{a_1}{2^2 + 1} = -\frac{-1/2}{4+1} = \frac{1}{10} $$
+
+    $$ a_3 = -\frac{a_2}{3^2 + 1} = -\frac{1/10}{9+1} = -\frac{1}{100} $$
+
+    <p>A solução geral é então:</p>
+
+    $$ y(x) = a_0 \sum_{n=0}^{\infty} \frac{(-1)^n}{(n^2+1)} x^n $$
+
+
+    <p>Esse foi um exemplo simples de aplicação do <strong>método de Frobenius</strong>, onde encontramos:</p>
+
+    <ul>
+        <li>A equação indicial \( r^2 = 0 \).</li>
+        <li>Uma relação de recorrência para os coeficientes.</li>
+        <li>A solução geral na forma de série.</li>
+    </ul>
 
 
 
@@ -1263,6 +1426,312 @@ $$ f(x) = \frac{1}{1 - x} $$
 
 
 
+    <h2>Transformada de Laplace</h2>
+
+    <p>
+        A <strong>Transformada de Laplace</strong> é uma técnica matemática usada para transformar funções de uma variável real (geralmente o tempo \( t \)) em funções de uma variável complexa \( s \). Essa transformação é amplamente utilizada para resolver equações diferenciais lineares, analisar sistemas dinâmicos e estudar sinais e sistemas em engenharia e física.
+    </p>
+
+    <h3>Definição</h3>
+    <p>
+        A Transformada de Laplace de uma função \( f(t) \), definida para \( t \geq 0 \), é dada por:
+        $$
+        F(s) = \mathcal{L}\{f(t)\} = \int_0^\infty f(t) e^{-st} \, dt
+        $$
+        Onde:
+        <ul>
+            <li>\( f(t) \) é a função no domínio do tempo.</li>
+            <li>\( F(s) \) é a função transformada no domínio de Laplace.</li>
+            <li>\( s = \sigma + j\omega \) é uma variável complexa (\( \sigma \) e \( \omega \) são reais, e \( j \) é a unidade imaginária).</li>
+        </ul>
+    </p>
+
+    <h3>Propriedades da Transformada de Laplace</h3>
+    <p>
+        A Transformada de Laplace possui várias propriedades úteis que facilitam sua aplicação. Algumas das principais são:
+    </p>
+    <ol>
+        <li>
+            <strong>Linearidade</strong>:
+            $$
+            \mathcal{L}\{a f(t) + b g(t)\} = a F(s) + b G(s)
+            $$
+            Onde \( a \) e \( b \) são constantes.
+        </li>
+        <li>
+            <strong>Deslocamento no tempo</strong>:
+            $$
+            \mathcal{L}\{f(t - a) u(t - a)\} = e^{-as} F(s)
+            $$
+            Onde \( u(t - a) \) é a função degrau unitário.
+        </li>
+        <li>
+            <strong>Deslocamento na frequência</strong>:
+            $$
+            \mathcal{L}\{e^{at} f(t)\} = F(s - a)
+            $$
+        </li>
+        <li>
+            <strong>Derivação no tempo</strong>:
+            $$
+            \mathcal{L}\{f'(t)\} = s F(s) - f(0)
+            $$
+            Para derivadas de ordem superior:
+            $$
+            \mathcal{L}\{f''(t)\} = s^2 F(s) - s f(0) - f'(0)
+            $$
+        </li>
+        <li>
+            <strong>Integração no tempo</strong>:
+            $$
+            \mathcal{L}\left\{\int_0^t f(\tau) \, d\tau\right\} = \frac{F(s)}{s}
+            $$
+        </li>
+    </ol>
+
+    <h4>Transformadas de Laplace de Funções Comuns</h4>
+    <p>
+        Algumas transformadas de Laplace de funções comuns são:
+    </p>
+    <ul>
+        <li>
+            Função constante (\( f(t) = 1 \)):
+            $$
+            \mathcal{L}\{1\} = \frac{1}{s}
+            $$
+        </li>
+        <li>
+            Função exponencial (\( f(t) = e^{at} \)):
+            $$
+            \mathcal{L}\{e^{at}\} = \frac{1}{s - a}
+            $$
+        </li>
+        <li>
+            Função seno (\( f(t) = \sin(\omega t) \)):
+            $$
+            \mathcal{L}\{\sin(\omega t)\} = \frac{\omega}{s^2 + \omega^2}
+            $$
+        </li>
+        <li>
+            Função cosseno (\( f(t) = \cos(\omega t) \)):
+            $$
+            \mathcal{L}\{\cos(\omega t)\} = \frac{s}{s^2 + \omega^2}
+            $$
+        </li>
+        <li>
+            Função degrau unitário (\( f(t) = u(t) \)):
+            $$
+            \mathcal{L}\{u(t)\} = \frac{1}{s}
+            $$
+        </li>
+    </ul>
+
+    <h3>Transformada Inversa de Laplace</h3>
+    <p>
+        A <strong>Transformada Inversa de Laplace</strong> é usada para recuperar a função original \( f(t) \) a partir de sua transformada \( F(s) \). Ela é dada por:
+        $$
+        f(t) = \mathcal{L}^{-1}\{F(s)\} = \frac{1}{2\pi j} \int_{\sigma - j\infty}^{\sigma + j\infty} F(s) e^{st} \, ds
+        $$
+        Na prática, a transformada inversa é calculada usando tabelas de transformadas ou técnicas de expansão em frações parciais.
+    </p>
+
+    <h3>Aplicações</h3>
+    <p>
+        A Transformada de Laplace é amplamente utilizada em:
+        <ul>
+            <li>Resolução de equações diferenciais lineares.</li>
+            <li>Análise de sistemas dinâmicos em engenharia.</li>
+            <li>Estudo de circuitos elétricos.</li>
+            <li>Processamento de sinais e controle de sistemas.</li>
+        </ul>
+    </p>
+
+    <h3>Exemplo: Resolução de uma Equação Diferencial</h3>
+    <p>
+        Considere a equação diferencial:
+        $$
+        y''(t) + 3y'(t) + 2y(t) = 0
+        $$
+        Com condições iniciais \( y(0) = 1 \) e \( y'(0) = 0 \).
+    </p>
+    <p>
+        Aplicando a Transformada de Laplace em ambos os lados, obtemos:
+        $$
+        s^2 Y(s) - s y(0) - y'(0) + 3(s Y(s) - y(0)) + 2 Y(s) = 0
+        $$
+        Substituindo as condições iniciais:
+        $$
+        s^2 Y(s) - s + 3s Y(s) - 3 + 2 Y(s) = 0
+        $$
+        Simplificando:
+        $$
+        Y(s) = \frac{s + 3}{s^2 + 3s + 2} = \frac{s + 3}{(s + 1)(s + 2)}
+        $$
+        Usando frações parciais e a transformada inversa, obtemos a solução no domínio do tempo:
+        $$
+          \frac{s + 3}{(s + 1)(s + 2)} = \frac{A}{s + 1} + \frac{B}{s + 2} ⇒ s + 3 = A(s + 2) + B(s + 1)
+
+        $$
+        
+        $$
+            ⇒ s + 3 = As + 2A + Bs + B
+        $$
+        
+        $$
+            ⇒ s + 3 = (A + B)s + 2A + B   
+        $$
+
+        Igualando os coeficientes:
+        $$
+        \begin{cases}
+        A + B = 1 \\
+        2A + B = 3
+        \end{cases}
+        $$
+
+        
+        $$
+        A = 2 \text{ ; } B = -1
+        $$
+        Logo,
+        $$
+        Y(s) = \frac{2}{s + 1} - \frac{1}{s + 2}
+        $$
+        </p>
+
+    
+        <h4>Passo 4: Aplicar a Transformada Inversa</h4>
+        <p>
+            Aplicando a Transformada Inversa de Laplace a cada termo:
+            $$
+            y(t) = \mathcal{L}^{-1}\left\{\frac{2}{s + 1}\right\} - \mathcal{L}^{-1}\left\{\frac{1}{s + 2}\right\}
+            $$
+            Usando a tabela de transformadas:
+            $$
+            y(t) = 2e^{-t} - e^{-2t}
+            $$
+        </p>
+
+
+
+
+
+        <h2>Sistemas Lineares de Equações Diferenciais Ordinárias de 1ª Ordem</h2>
+
+        
+            <h3>Introdução</h3>
+            <p>
+                Um <strong>sistema linear de equações diferenciais ordinárias de 1ª ordem</strong> consiste em um conjunto de equações diferenciais lineares que envolvem funções desconhecidas e suas derivadas de primeira ordem.
+                
+            </p>
+            <p>
+                Um sistema geral de \( n \) equações diferenciais lineares de 1ª ordem pode ser escrito na forma:
+                $$
+                \begin{cases}
+                \frac{dx_1}{dt} = a_{11}(t)x_1 + a_{12}(t)x_2 + \cdots + a_{1n}(t)x_n + g_1(t) \\
+                \frac{dx_2}{dt} = a_{21}(t)x_1 + a_{22}(t)x_2 + \cdots + a_{2n}(t)x_n + g_2(t) \\
+                \vdots \\
+                \frac{dx_n}{dt} = a_{n1}(t)x_1 + a_{n2}(t)x_2 + \cdots + a_{nn}(t)x_n + g_n(t)
+                \end{cases}
+                $$
+                Onde:
+                <ul>
+                    <li>\( x_1(t), x_2(t), \ldots, x_n(t) \) são as funções desconhecidas.</li>
+                    <li>\( a_{ij}(t) \) são coeficientes que podem depender de \( t \).</li>
+                    <li>\( g_i(t) \) são termos não homogêneos.</li>
+                </ul>
+            </p>
+       
+    
+            <h3>Forma Matricial</h3>
+            <p>
+                O sistema pode ser escrito de forma compacta usando notação matricial:
+                $$
+                \frac{d\mathbf{x}}{dt} = \mathbf{A}(t)\mathbf{x} + \mathbf{g}(t)
+                $$
+                Onde:
+                <ul>
+                    <li>\( \mathbf{x}(t) = \begin{bmatrix} x_1(t) \\ x_2(t) \\ \vdots \\ x_n(t) \end{bmatrix} \) é o vetor de funções desconhecidas.</li>
+                    <li>\( \mathbf{A}(t) = \begin{bmatrix} a_{11}(t) & a_{12}(t) & \cdots & a_{1n}(t) \\ a_{21}(t) & a_{22}(t) & \cdots & a_{2n}(t) \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1}(t) & a_{n2}(t) & \cdots & a_{nn}(t) \end{bmatrix} \) é a matriz de coeficientes.</li>
+                    <li>\( \mathbf{g}(t) = \begin{bmatrix} g_1(t) \\ g_2(t) \\ \vdots \\ g_n(t) \end{bmatrix} \) é o vetor de termos não homogêneos.</li>
+                </ul>
+            </p>
+        
+    
+       
+            <h3>Sistemas Homogêneos</h3>
+            <p>
+                Um sistema é chamado de <strong>homogêneo</strong> se \( \mathbf{g}(t) = \mathbf{0} \). Nesse caso, o sistema se reduz a:
+                $$
+                \frac{d\mathbf{x}}{dt} = \mathbf{A}(t)\mathbf{x}
+                $$
+                A solução geral de um sistema homogêneo pode ser expressa como uma combinação linear de soluções linearmente independentes.
+            </p>
+           
+                <h3>Exemplo: Sistema Homogêneo com Coeficientes Constantes</h3>
+                <p>
+                    Considere o sistema homogêneo:
+                    $$
+                    \begin{cases}
+                    \frac{dx_1}{dt} = 2x_1 + x_2 \\
+                    \frac{dx_2}{dt} = x_1 + 2x_2
+                    \end{cases}
+                    $$
+                    Em forma matricial:
+                    $$
+                    \frac{d\mathbf{x}}{dt} = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix} \mathbf{x}
+                    $$
+                    Para resolver, encontramos os autovalores e autovetores da matriz \( \mathbf{A} \):
+                    <ul>
+                        <li>Autovalores: \( \lambda_1 = 1 \), \( \lambda_2 = 3 \).</li>
+                        <li>Autovetores correspondentes: \( \mathbf{v}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix} \), \( \mathbf{v}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \).</li>
+                    </ul>
+                    A solução geral é:
+                    $$
+                    \mathbf{x}(t) = c_1 e^{\lambda_1 t} \mathbf{v}_1 + c_2 e^{\lambda_2 t} \mathbf{v}_2 = c_1 e^{t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} + c_2 e^{3t} \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+                    $$
+                </p>
+          
+        
+    
+        
+            <h3>Sistemas Não Homogêneos</h3>
+            <p>
+                Um sistema é chamado de <strong>não homogêneo</strong> se \( \mathbf{g}(t) \neq \mathbf{0} \). A solução geral de um sistema não homogêneo é dada por:
+                $$
+                \mathbf{x}(t) = \mathbf{x}_h(t) + \mathbf{x}_p(t)
+                $$
+                Onde:
+                <ul>
+                    <li>\( \mathbf{x}_h(t) \) é a solução geral do sistema homogêneo associado.</li>
+                    <li>\( \mathbf{x}_p(t) \) é uma solução particular do sistema não homogêneo.</li>
+                </ul>
+            </p>
+           
+                <h3>Exemplo: Sistema Não Homogêneo</h3>
+                <p>
+                    Considere o sistema não homogêneo:
+                    $$
+                    \begin{cases}
+                    \frac{dx_1}{dt} = 2x_1 + x_2 + e^t \\
+                    \frac{dx_2}{dt} = x_1 + 2x_2 + t
+                    \end{cases}
+                    $$
+                    A solução geral é a soma da solução homogênea (já encontrada no exemplo anterior) e uma solução particular. Para encontrar \( \mathbf{x}_p(t) \), usamos métodos como coeficientes a determinar ou variação de parâmetros.
+                </p>
+        
+    
+      
+            <h3>Métodos de Resolução</h3>
+            <p>
+                Alguns métodos comuns para resolver sistemas lineares de equações diferenciais de 1ª ordem incluem:
+                <ul>
+                    <li><strong>Autovalores e Autovetores</strong>: Usado para sistemas homogêneos com coeficientes constantes.</li>
+                    <li><strong>Variação de Parâmetros</strong>: Usado para sistemas não homogêneos.</li>
+                    <li><strong>Transformada de Laplace</strong>: Útil para sistemas com condições iniciais.</li>
+                </ul>
+            </p>
+        
 
 
 
@@ -1270,8 +1739,155 @@ $$ f(x) = \frac{1}{1 - x} $$
 
 
 
+            <h3>Exemplos de Sistemas Lineares de EDOs de 1ª Ordem</h3>
 
+            
+                <h3>1. Método de Autovalores e Autovetores</h3>
+                
+                    <h4>Exemplo: Sistema Homogêneo com Coeficientes Constantes</h4>
+                    <p>
+                        Considere o sistema homogêneo:
+                        $$
+                        \begin{cases}
+                        \frac{dx_1}{dt} = 3x_1 - x_2 \\
+                        \frac{dx_2}{dt} = 2x_1 + 2x_2
+                        \end{cases}
+                        $$
+                        Em forma matricial:
+                        $$
+                        \frac{d\mathbf{x}}{dt} = \begin{bmatrix} 3 & -1 \\ 2 & 2 \end{bmatrix} \mathbf{x}
+                        $$
+                        <h4>Passo 1: Encontrar os autovalores</h4>
+                        <p>
+                            Resolvemos a equação característica:
+                            $$
+                            \det(\mathbf{A} - \lambda \mathbf{I}) = 0 \implies \det \begin{bmatrix} 3 - \lambda & -1 \\ 2 & 2 - \lambda \end{bmatrix} = 0
+                            $$
+                            Calculando o determinante:
+                            $$
+                            (3 - \lambda)(2 - \lambda) - (-1)(2) = \lambda^2 - 5\lambda + 8 = 0
+                            $$
+                            As raízes são:
+                            $$
+                            \lambda_1 = 4, \quad \lambda_2 = 1
+                            $$
+                        </p>
+                        <h4>Passo 2: Encontrar os autovetores</h4>
+                        <p>
+                            Para \( \lambda_1 = 4 \):
+                            $$
+                            (\mathbf{A} - 4\mathbf{I})\mathbf{v}_1 = \mathbf{0} \implies \begin{bmatrix} -1 & -1 \\ 2 & -2 \end{bmatrix} \begin{bmatrix} v_{11} \\ v_{12} \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+                            $$
+                            Solução: \( \mathbf{v}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix} \).
+                        </p>
+                        <p>
+                            Para \( \lambda_2 = 1 \):
+                            $$
+                            (\mathbf{A} - \mathbf{I})\mathbf{v}_2 = \mathbf{0} \implies \begin{bmatrix} 2 & -1 \\ 2 & 1 \end{bmatrix} \begin{bmatrix} v_{21} \\ v_{22} \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+                            $$
+                            Solução: \( \mathbf{v}_2 = \begin{bmatrix} 1 \\ 2 \end{bmatrix} \).
+                        </p>
+                        <h4>Passo 3: Escrever a solução geral</h4>
+                        <p>
+                            A solução geral é:
+                            $$
+                            \mathbf{x}(t) = c_1 e^{4t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} + c_2 e^{t} \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+                            $$
+                        </p>
+                    </p>
 
+           
+                <h3>2. Método de Variação de Parâmetros</h3>
+                
+                    <h4>Exemplo: Sistema Não Homogêneo</h4>
+                    <p>
+                        Considere o sistema não homogêneo:
+                        $$
+                        \begin{cases}
+                        \frac{dx_1}{dt} = 2x_1 + x_2 + e^t \\
+                        \frac{dx_2}{dt} = x_1 + 2x_2 + t
+                        \end{cases}
+                        $$
+                        <h4>Passo 1: Resolver o sistema homogêneo associado</h4>
+                        <p>
+                            O sistema homogêneo associado é:
+                            $$
+                            \frac{d\mathbf{x}}{dt} = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix} \mathbf{x}
+                            $$
+                            Autovalores: \( \lambda_1 = 1 \), \( \lambda_2 = 3 \).
+                            Autovetores: \( \mathbf{v}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix} \), \( \mathbf{v}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \).
+                            Solução homogênea:
+                            $$
+                            \mathbf{x}_h(t) = c_1 e^{t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} + c_2 e^{3t} \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+                            $$
+                        </p>
+                        <h4>Passo 2: Encontrar uma solução particular</h4>
+                        <p>
+                            Usamos o método de variação de parâmetros. Assumimos:
+                            $$
+                            \mathbf{x}_p(t) = u_1(t) e^{t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} + u_2(t) e^{3t} \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+                            $$
+                            Resolvemos para \( u_1(t) \) e \( u_2(t) \) usando:
+                            $$
+                            \begin{cases}
+                            u_1'(t) e^{t} + u_2'(t) e^{3t} = 0 \\
+                            -u_1'(t) e^{t} + u_2'(t) e^{3t} = e^t + t
+                            \end{cases}
+                            $$
+                            Solução:
+                            $$
+                            u_1(t) = -\frac{1}{2} e^{-t} (e^t + t), \quad u_2(t) = \frac{1}{2} e^{-3t} (e^t + t)
+                            $$
+                            Integrando, obtemos \( u_1(t) \) e \( u_2(t) \).
+                        </p>
+                        <h4>Passo 3: Escrever a solução geral</h4>
+                        <p>
+                            A solução geral é:
+                            $$
+                            \mathbf{x}(t) = \mathbf{x}_h(t) + \mathbf{x}_p(t)
+                            $$
+                        </p>
+                    </p>
+
+        
+
+                <h3>3. Método da Transformada de Laplace</h3>
+
+                    <h4>Exemplo: Sistema com Condições Iniciais</h4>
+                    <p>
+                        Considere o sistema:
+                        $$
+                        \begin{cases}
+                        \frac{dx_1}{dt} = x_1 + x_2 + 1 \\
+                        \frac{dx_2}{dt} = 2x_1 + x_2 + e^t
+                        \end{cases}
+                        $$
+                        Com condições iniciais \( x_1(0) = 0 \) e \( x_2(0) = 1 \).
+                        <h4>Passo 1: Aplicar a Transformada de Laplace</h4>
+                        <p>
+                            Aplicando a Transformada de Laplace a cada equação:
+                            $$
+                            sX_1(s) - x_1(0) = X_1(s) + X_2(s) + \frac{1}{s} \\
+                            sX_2(s) - x_2(0) = 2X_1(s) + X_2(s) + \frac{1}{s - 1}
+                            $$
+                            Substituindo as condições iniciais:
+                            $$
+                            sX_1(s) = X_1(s) + X_2(s) + \frac{1}{s} \\
+                            sX_2(s) - 1 = 2X_1(s) + X_2(s) + \frac{1}{s - 1}
+                            $$
+                        </p>
+                        <h4>Passo 2: Resolver o sistema algébrico</h4>
+                        <p>
+                            Resolvemos para \( X_1(s) \) e \( X_2(s) \):
+                            $$
+                            X_1(s) = \frac{s^2 - s + 1}{s(s - 1)(s - 2)}, \quad X_2(s) = \frac{s^3 - 2s^2 + 2s - 1}{s(s - 1)(s - 2)}
+                            $$
+                        </p>
+                        <h4>Passo 3: Aplicar a Transformada Inversa</h4>
+                        <p>
+                            Aplicando a Transformada Inversa de Laplace, obtemos \( x_1(t) \) e \( x_2(t) \).
+                        </p>
+                    </p>
 
 
 
