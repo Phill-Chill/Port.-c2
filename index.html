@@ -732,10 +732,561 @@ $$ f(x) = \frac{1}{1 - x} $$
     <p> Enfim fechando a série ficamos que:</p>
     <p>$$ sin(x) = \sum^∞_{n = 0} (-1)^n \frac{x^{2n + 1}}{(2n + 1)!} $$</p>
 
-    <h2>Equações Diferenciais Ordinnárias (EDO)</h2>	
+    <h2>Equações Diferenciais Ordinárias (EDO's)</h2>
+    <p>EDO's são equações que envolve uma função e sua derivadas, por exemplo:</p>
+    <p>$$ \frac{d^2}{dx^2} y + 3y = p(x) $$</p>
+    
+    <h3>Classificação</h3>
 
-    </div>  
+    <p>As EDO's podem ser classificadas em:</p>
+    <h4>Ordem</h4>
+    <p>Em uma EDO's o nível da derivada define sua ordem:</p>
+    <p>$$ I) \text{   } x^3\frac{d^2y}{d^2x} + y = 0  ⇒  Ordem : 2 $$
+       $$ II) \text{   } x^2y' + \frac{x.y}{2} = 0  ⇒  Ordem : 1 $$
+       $$ III) \text{   } \frac{34d^ny}{d^nx} - x^4\frac{dy}{dx} = 0  ⇒  Ordem : n $$
+    </p>
+    <h4>Linearidade</h4>
+    <p>Se a função e suas derivadas são lineares, a EDO é linear caso contrário será não linear.</p>
+    <p>$$ I) \text{   } \frac{d^2y}{dx^2} + 3y = 0  ⇒  Linear $$
+       $$  II) \text{   } \frac{d^2y}{dx^2} + 3y^2 = 0  ⇒  Não-linear $$
+       $$ III) \text{   } \frac{d^2y}{dx^2} + y . \frac{dy}{dx}= 89  ⇒  Não-Linear $$
+    </p>
+    <p> Perceba que na EDO II o y está ao quadrado e a III o y é o coeficiente.</p>
 
-</body>
+    <h4>Homogeniedade</h4>
+    <p>Uma função de grau n será homogênea quando:</p>
+    <p>$$ f(λx, λy) = λ^nf(x,y)$$</p>
+    <p> Por exemplo:</p>
+    <p>$$ f(x,y) = x^3 + 2xy^2 $$</p>
+    <p>$$ f(λx, λy) = (λx)^3 + 2(λx)(λy)^2 ⇒ λ^3x^3 + 2λ^3x^2y^2 = λ^3(x^3 + 2xy^2) 
+        ⇒  λ^3f(x,y)$$ 
+    $$ f(λx, λy) = λ^3f(x,y)$$</p>
 
-</html>
+    <h3>Solução</h3>
+
+    <p>Para, neste primeiro momento, solucionar uma EDO precisamos verifcar se  a expressão irá satifazer a EDO.</p>
+
+    <p>Ex.:</p>
+    <p>$$ 
+        \left\{
+        \begin{array}{l}
+        \frac{dy}{dx} + 2y = 4x \\
+        y(x) = 2x - 1 + C.e^{-2x}
+        \end{array}
+        \right.
+        $$
+    </p>
+
+    <p>Derivando para substituir na EDO:</p>
+    <p>$$ y'(x) = 2 -2Ce^{-2x} $$</p>
+    <p>Substituindo:</p>
+
+    <p>$$ 2 - 2Ce^{-2x} + 2(2x -1 + Ce^{-2x}) = 4x ⇒ 2 - 2Ce^{-2x} + 4x -2 + 2Ce^{-2x} = 4x$$</p>
+    <p>$$
+        \cancel{2} - 2\cancel{Ce^{-2x}} + 4x \cancel{ -2 } + 2\cancel{Ce^{-2x}} = 4x
+        $$ $$ 4x = 4x ⇒ x = x$$
+    </p>
+    <p>Portanto, y(x) = 2x -1 + C.e<sup>-2x</sup> é solução </p>
+
+    <h4>Problema de Valor Inicial (PVI)</h4>
+    <p class="texto-h4">Séra solução particular da EDO sendo dado um valor da função e/ou suas derivadas em um ponto inicial.</p>
+
+    <p class="texto-h4">Ex.: Ainda utilizando o exemplo anterior</p>
+
+    <p>$$ 
+        \left\{
+        \begin{array}{l}
+        y(x) = 2x - 1 + C.e^{-2x} \\
+        y(0) = 1
+        \end{array}
+        \right.
+        $$
+    </p>
+    <p class="texto-h4">Substituindo:</p>
+    <p>$$ 1 = 2.0 - 1 + C.e^0 ⇒ 1 = -1 + C $$ $$ C = 2 $$</p>
+    <p>Então, $$ y(0) = 2x - 1 + 2e^{-2x} $$</p>
+
+    <h3>Técnicas de solução:</h4>
+    <h4>EDO's separáveis</h5>
+    <p class="texto-h4">Podemos carcterizar uma EDO como separável se for possivel reescrever ela como: 
+        $$ \frac{d^ny}{d^nx} = f(x) . g(y) $$ 
+        assim podendo isolar as variáveis e possibilitando suas integrações:
+        $$ \frac{1}{g(y)} d^ny = f(x) . d^nx $$
+    </p>
+    
+    <p class="texto-h4">
+        
+        Resolva a integração e isole o y se possível para encontrar a solução da EDO.
+    </p>
+
+    <p>Ex.:</p>
+    <p>
+        $$
+        \frac{dN}{dt} = -kN,
+        $$
+    </p>
+    <p>onde:</p>
+    <ul>
+        <li>\( N(t) \) é a quantidade da substância no tempo \( t \).</li>
+        <li>\( k \) é uma constante positiva que representa a taxa de decaimento.</li>
+    </ul>
+
+    <h3>Passo a Passo para Resolver:</h3>
+    <p>1. Separe as variáveis:</p>
+    <p>
+        $$
+        \frac{1}{N} \, dN = -k \, dt.
+        $$
+    </p>
+
+    <p>2. Integre ambos os lados:</p>
+    <p>
+        $$
+        \int \frac{1}{N} \, dN = \int -k \, dt.
+        $$
+    </p>
+    <p>As integrais são:</p>
+    <p>
+        $$
+        \ln|N| = -kt + C,
+        $$
+    </p>
+    
+
+    <p>3. Isolando \( N \):</p>
+    <p>
+       
+        $$
+        |N| = e^{-kt + C} = e^C \cdot e^{-kt}.
+        $$
+    </p>
+    <p>
+       
+        $$
+        N(t) = e^C \cdot e^{-kt}.
+        $$
+    </p>
+
+    <p>4. Solução final:</p>
+    <p>
+       
+        $$
+        N(t) = C_1\cdot e^{-kt}.
+        $$
+    </p>
+
+    <hr>
+
+    <h4>EDO's não homogêneas</h4>
+
+
+    <div class="texto-h4">
+
+
+
+
+    <p>Nesse tipo de EDO há termos indepedentes, tendo como forma geral em uma EDO linear de primeira ordem:</p>
+    <p>$$
+        \frac{dy}{dx} + p(x)y = q(x)
+    $$
+    </p>
+
+
+
+
+
+
+
+    <p>Considere a seguinte EDO linear de primeira ordem:</p>
+    <p>
+        $$
+        \frac{dy}{dx} + 2xy = x.
+        $$
+    </p>
+
+    <h3>Passo a Passo para Resolver:</h3>
+    <p>1. Identifique \( p(x) \) e \( q(x) \):</p>
+    <p>
+        $$
+        p(x) = 2x, \quad q(x) = x.
+        $$
+    </p>
+
+    <p>2. Calcule o fator integrante \( \mu(x) \):</p>
+    <p>
+        $$
+        \mu(x) = e^{\int p(x) \, dx}.
+        $$
+        Substituindo \( p(x) = 2x \):
+        $$
+        \mu(x) = e^{\int 2x \, dx} = e^{x^2}.
+        $$
+    </p>
+
+    <p>3. Multiplique a EDO pelo fator integrante:</p>
+    <p>
+        $$
+        e^{x^2} \frac{dy}{dx} + 2x e^{x^2} y = x e^{x^2}.
+        $$
+        Observe que o lado esquerdo é a derivada do produto \( y \cdot e^{x^2} \):
+        $$
+        \frac{d}{dx} \left( y e^{x^2} \right) = x e^{x^2}.
+        $$
+    </p>
+
+    <p>4. Integre ambos os lados:</p>
+    <p>
+      
+        $$
+        y e^{x^2} = \int x e^{x^2} \, dx.
+        $$
+        Para resolver a integral do lado direito, use a substituição \( u = x^2 \), \( du = 2x \, dx \):
+        $$
+        \int x e^{x^2} \, dx = \frac{1}{2} \int e^u \, du = \frac{1}{2} e^u + C = \frac{1}{2} e^{x^2} + C.
+        $$
+    </p>
+
+    <p>5. Resolva para \( y \):</p>
+    <p>
+        Multiplique ambos os lados por \( e^{-x^2} \):
+        $$
+        y = \frac{1}{2} e^{x^2} \cdot e^{-x^2} + C e^{-x^2}.
+        $$
+        Simplifique:
+        $$
+        y = \frac{1}{2} + C e^{-x^2}.
+        $$
+    </p>
+
+    <p>6. Solução geral:</p>
+    <p>
+        $$
+        y(x) = \frac{1}{2} + C e^{-x^2}.
+        $$
+    </p>
+
+    <h4>EDO's exata</h4>
+    <p>Uma EDO exata é caracterizada pelo formato:</p> 
+    <p> $$ M(x, y) \, dx + N(x, y) \, dy = 0. $$ </p> 
+    <p> Para que a EDO seja exata, é necessário verificar se a derivada parcial de \( M(x, y) \) em relação a \( y \) é igual à derivada parcial de \( N(x, y) \) em relação a \( x \): </p> 
+    <p> $$ \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}. $$ </p> 
+    <p> Se essa condição for satisfeita, então existe uma função \( \psi(x, y) \) tal que: \[ d\psi = M \, dx + N \, dy, \] e a solução geral da EDO é dada implicitamente por \( \psi(x, y) = C \), onde \( C \) é uma constante. </p>
+
+
+    <p>Considere a seguinte EDO:</p>
+    <p>
+        $$
+        (2xy + 3y^2) \, dx + (x^2 + 6xy) \, dy = 0.
+        $$
+    </p>
+
+    <h3>Passo a Passo para Resolver:</h3>
+    <p>1. Verifique a condição de exatidão:</p>
+    <p>
+        Identifique \( M(x, y) = 2xy + 3y^2 \) e \( N(x, y) = x^2 + 6xy \).
+        Calcule as derivadas parciais:
+        $$
+        \frac{\partial M}{\partial y} = \frac{\partial}{\partial y}(2xy + 3y^2) = 2x + 6y,
+        $$
+        $$
+        \frac{\partial N}{\partial x} = \frac{\partial}{\partial x}(x^2 + 6xy) = 2x + 6y.
+        $$
+        Como \( \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x} \), a EDO é exata.
+    </p>
+
+    <p>2. Encontre a função \( \psi(x, y) \):</p>
+    <p>
+        - Integre \( M(x, y) \) em relação a \( x \):
+        $$
+        \psi(x, y) = \int (2xy + 3y^2) \, dx = x^2y + 3xy^2 + h(y),
+        $$
+        onde \( h(y) \) é uma função de \( y \) que surge como constante de integração.
+    </p>
+    <p>
+        - Derive \( \psi(x, y) \) em relação a \( y \) , iguale a \( N(x, y) \) e isole h'(y):
+        $$
+        \frac{\partial \psi}{\partial y} = x^2 + 6xy + h'(y) 
+        $$
+        $$
+        x^2 + 6xy + h'(y) = x^2 + 6xy.
+        $$
+        $$ \cancel{x^2 + 6xy }+ h'(y) = \cancel{x^2 + 6xy}. $$
+        Portanto, \( h'(y) = 0 \), o que, integrando, implica \( h(y) = C \) (constante).
+    </p>
+
+    <p>3. Solução geral:</p>
+    <p>
+        A função \( \psi(x, y) \) é:
+        $$
+        \psi(x, y) = x^2y + 3xy^2 + C.
+        $$
+        A solução geral da EDO é dada implicitamente por:
+        $$
+        x^2y + 3xy^2 = C.
+        $$
+    </p>
+<hr>
+
+
+    <h4>EDO's Não-exata</h4>
+
+    <p>Quando uma EDO não é exata, ainda podemos tentar transformá-la em uma EDO exata usando um fator integrante. 
+        Um fator integrante é uma função μ(x,y) que, quando multiplicada pela EDO, a torna exata. Portanto:
+    </p>
+    <p>$$ \frac{\partial μM}{\partial y} = \frac{\partial μN}{\partial x}. $$</p>
+    <p>O fator integrante será definido por:
+    </p>
+    <h4>Fator Integrante Dependente de \( x \):</h4>
+    <p>
+        Se a expressão:
+        $$
+        \frac{\frac{\partial M}{\partial y} - \frac{\partial N}{\partial x}}{N},
+        $$
+        depende apenas de \( x \), então o fator integrante é:
+        $$
+        \mu(x) = e^{\int \frac{\frac{\partial M}{\partial y} - \frac{\partial N}{\partial x}}{N} \, dx}.
+        $$
+    </p>
+
+    <h4>Fator Integrante Dependente de \( y \):</h4>
+    <p>
+        Se a expressão:
+        $$
+        \frac{\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}}{M},
+        $$
+        depende apenas de \( y \), então o fator integrante é:
+        $$
+        \mu(y) = e^{\int \frac{\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}}{M} \, dy}.
+        $$
+    </p>
+
+
+
+
+    <p>Considere a seguinte EDO:</p>
+
+        $$
+        (3x^2 + y) \, dx + (x^2y - x) \, dy = 0.
+        $$
+    </p>
+
+    <h3>Passo a Passo para Resolver:</h3>
+    <p>1. Verifique se a EDO é exata:</p>
+    <p>
+        Identifique \( M(x, y) = 3x^2 + y \) e \( N(x, y) = x^2y - x \).
+        Calcule as derivadas parciais:
+        $$
+        \frac{\partial M}{\partial y} = 1,
+        $$
+        $$
+        \frac{\partial N}{\partial x} = 2xy - 1.
+        $$
+        Como \( \frac{\partial M}{\partial y} \neq \frac{\partial N}{\partial x} \), a EDO **não é exata**.
+    </p>
+
+    <p>2. Encontre o fator integrante:</p>
+    <p>
+        - Calcule a expressão:
+        $$
+        \frac{\frac{\partial M}{\partial y} - \frac{\partial N}{\partial x}}{N} = \frac{1 - (2xy - 1)}{x^2y - x} = \frac{2 - 2xy}{x^2y - x}.
+        $$
+        Simplifique:
+        $$
+        \frac{2 - 2xy}{x^2y - x} = \frac{2(1 - xy)}{x(xy - 1)} = -\frac{2}{x}.
+        $$
+        Agora, a expressão depende apenas de \( x \). Portanto, o fator integrante é:
+        $$
+        \mu(x) = e^{\int -\frac{2}{x} \, dx} = e^{-2 \ln|x|} = \frac{1}{x^2}.
+        $$
+    </p>
+
+    <p>3. Multiplique a EDO pelo fator integrante:</p>
+    <p>
+        Multiplicando ambos os lados da EDO por \( \mu(x) = \frac{1}{x^2} \):
+        $$
+        \frac{3x^2 + y}{x^2} \, dx + \frac{x^2y - x}{x^2} \, dy = 0.
+        $$
+        Simplifique:
+        $$
+        \left(3 + \frac{y}{x^2}\right) \, dx + \left(y - \frac{1}{x}\right) \, dy = 0.
+        $$
+    </p>
+
+    <p>4. Verifique se a nova EDO é exata:</p>
+    <p>
+        Identifique \( M'(x, y) = 3 + \frac{y}{x^2} \) e \( N'(x, y) = y - \frac{1}{x} \).
+        Calcule as derivadas parciais:
+        $$
+        \frac{\partial M'}{\partial y} = \frac{1}{x^2},
+        $$
+        $$
+        \frac{\partial N'}{\partial x} = \frac{1}{x^2}.
+        $$
+        Como \( \frac{\partial M'}{\partial y} = \frac{\partial N'}{\partial x} \), a nova EDO é exata.
+    </p>
+
+    <p>5. Resolva a EDO exata:</p>
+    <p>
+        - Integre \( M'(x, y) \) em relação a \( x \):
+        $$
+        \psi(x, y) = \int \left(3 + \frac{y}{x^2}\right) \, dx = 3x - \frac{y}{x} + h(y).
+        $$
+        - Derive \( \psi(x, y) \) em relação a \( y \) e iguale a \( N'(x, y) \):
+        $$
+        \frac{\partial \psi}{\partial y} = -\frac{1}{x} + h'(y) = y - \frac{1}{x}.
+        $$
+        Portanto, \( h'(y) = y \), o que implica \( h(y) = \frac{y^2}{2} + C \).
+    </p>
+
+    <p>6. Solução geral:</p>
+    <p>
+        A função \( \psi(x, y) \) é:
+        $$
+        \psi(x, y) = 3x - \frac{y}{x} + \frac{y^2}{2} + C.
+        $$
+        A solução geral da EDO é dada implicitamente por:
+    </p>
+        $$
+        (3x^2 + y) \, dx + (x^2y - x) \, dy = 0.
+        $$
+    </p>
+</div>
+
+
+    <h2>Equações Diferênciais de Segunda Ordem</h2>
+
+<div class="texto-h4">
+    
+    <p>
+        As Equações Diferenciais Ordinárias (EDOs) de segunda ordem são equações que envolvem 
+        a segunda derivada de uma função desconhecida y(x).
+    </p>
+
+    
+
+    <h3>Métodos de Solução para EDOs de Segunda Ordem</h3>
+
+    <h4>EDOs Lineares Homogêneas com Coeficientes Constantes</h4>
+    <p>
+        Aplica-se a EDOs da forma:
+        $$ y'' + a y' + b y = 0. $$
+    </p>
+    <p>
+        <strong>Passo a Passo:</strong>
+        <ol>
+            <li>
+                <strong>Equação Característica</strong>:
+                Substitua \( y = e^{rx} \) na EDO para obter:
+                $$ r^2 + a r + b = 0. $$
+            </li>
+            <li>
+                <strong>Raízes da Equação Característica</strong>:
+                Resolva a equação para encontrar \( r_1 \) e \( r_2 \).
+            </li>
+            <li>
+                <strong>Solução Geral</strong>:
+                <ul>
+                    <li>
+                        <strong>Raízes Reais e Distintas</strong> (\( r_1 \neq r_2 \)):
+                        $$ y(x) = C_1 e^{r_1 x} + C_2 e^{r_2 x}. $$
+                    </li>
+                    <li>
+                        <strong>Raízes Reais e Iguais</strong> (\( r_1 = r_2 \)):
+                        $$ y(x) = (C_1 + C_2 x) e^{r_1 x}. $$
+                    </li>
+                    <li>
+                        <strong>Raízes Complexas</strong> (\( r = \alpha \pm i\beta \)):
+                        $$ y(x) = e^{\alpha x} (C_1 \cos(\beta x) + C_2 \sin(\beta x)). $$
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </p>
+
+    <h4>EDOs Lineares Não Homogêneas com Coeficientes Constantes</h4>
+    <p>
+        Aplica-se a EDOs da forma:
+        $$ y'' + a y' + b y = g(x). $$
+    </p>
+    <p>
+        <strong>Passo a Passo:</strong>
+        <ol>
+            <li>
+                <strong>Solução da Equação Homogênea</strong>:
+                Resolva a equação homogênea associada:
+                $$ y'' + a y' + b y = 0, $$
+                obtendo a solução geral \( y_h(x) \).
+            </li>
+            <li>
+                <strong>Solução Particular da Equação Não Homogênea</strong>:
+                Encontre uma solução particular \( y_p(x) \) usando métodos como:
+                <ul>
+                    <li><strong>Coeficientes a Determinar</strong>: Para \( g(x) \) polinomial, exponencial, seno ou cosseno.</li>
+                    <li><strong>Variação dos Parâmetros</strong>: Para \( g(x) \) mais geral.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Solução Geral</strong>:
+                A solução geral é a soma da solução homogênea e da solução particular:
+                $$ y(x) = y_h(x) + y_p(x). $$
+            </li>
+        </ol>
+    </p>
+
+    <h4>Redução de Ordem</h4>
+    <p>
+        Aplica-se a EDOs lineares de segunda ordem quando uma solução \( y_1(x) \) é conhecida.
+    </p>
+    <p>
+        <strong>Passo a Passo:</strong>
+        <ol>
+            <li>
+                Substitua \( y(x) = v(x) y_1(x) \) na EDO.
+            </li>
+            <li>
+                Resolva a nova EDO para \( v(x) \).
+            </li>
+            <li>
+                A solução geral é:
+                $$ y(x) = C_1 y_1(x) + C_2 v(x) y_1(x). $$
+            </li>
+        </ol>
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </body>
+    </html>
