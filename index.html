@@ -26,28 +26,35 @@
                 <button class="dropbtn">Exercício</button>
                 <div class="dropdown-content">
                     <a href="sequencia.html">Sequência</a>
-                    <a href="index-copy.html" target="_blank" rel="noopener noreferrer">Link 2</a>
+                    <a href="">Link 2</a>
                     <a href="#">Link 3</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Navegação</button>
                 <div class="dropdown-content">
-                    <a href="#notacao">Notação</a>
-                    <a href="#limites">Limites</a>
-                    <a href="#comportamentos">Comportamentos sequenciais</a>
-                    <a href="#tipos">Tipos de sequências</a>
+                    <a href="#sequencia">Sequência</a>
+                    <a href="#serie">Séries</a>
+                    <a href="#EDO">EDO</a>
+                    <a href="#EDO2">EDO 2a</a>
+                    <a href="#serieDePotencias">Série de potências</a>
+                    <a href="#transformadaDeLaplace">Transformada de Laplace</a>
+                    <a href="#sitema">Sistemas Lineares</a>
                 </div>
             </div>
+
+            <div class="drop-btn">
+            <a href="index-copy.html" target="_blank" rel="noopener noreferrer" class="dropbtn">Tabela LaPlace</a>
+        </div>
         </div>
 </div>
     </header>
 
     <!--TEXTO-CONTEUDO-->
     <div class="texto-conteudo">
-        <h2>Sequências</h2>
+        <h2 >Sequências</h2>
 
-    <p class="texto-h2">
+    <p id ="sequencia" class="texto-h2">
         <p>
             Uma sequência é caracterizada por uma ordem lógica de números ou letras:
         </p>
@@ -66,7 +73,7 @@
         </p>
     
     </p>    
-    <div id="notacao" class="notação">
+    <div class="notação">
     <h3 >Notação</h3>
 
         <p>
@@ -118,7 +125,7 @@
                 title="Cálculo 2">C2</span> estudaremos sequência com n tendendo ao infinito, o que implica que sempre
             haverá um termo sucessor (a<sub>n+1</sub>).</p>
 </div>
-<div id="limites" class="limite">
+<div class="limite">
         <h3 >
             Limites:
         </h3>
@@ -229,7 +236,7 @@
         </small>
 
         </div>
-        <div id="comportamentos" class="comportamento">
+        <div class="comportamento">
         <h3>
             Comportamentos sequenciais
         </h3>
@@ -277,7 +284,7 @@
             essa sequência de monótona.
         </p>
         <hr>
-        <div id="tipos">
+        <div >
         <h3>Tipos de sequências</h3>
 
             
@@ -379,7 +386,7 @@
         
     <h2>Séries</h2>
 
-    <p class="texto-h2">
+    <p id="serie" class="texto-h2">
         <p>A soma de termos ordenados é denominada série:</p>
         <p>$$ séries = a_1 + a_2 + a_3 + ... + a_n $$</p>
     </p>
@@ -459,12 +466,12 @@
     <p>$$ \sum_{n=1}^{∞} \frac{1}{n^2+1} \text{ ⬌ }  \int_{1}^{∞} \frac{1}{n^2+1} \, dn = \left[ arctg(n) \right]_1^t = arctg(t) - arctg(1) $$</p>
     <p>$$ = lim_{n->∞} \left[arctg(t) - arctg(1) \right] = lim_{n->∞} \left[\frac{π}{2} - \frac{π}{4} \right] = \frac{π}{4} $$</p>
     <p class="texto-h4">Utilizando o teste da integral, verificamos que a série converge. Contudo não sabemos para qual ponto.</p>
-    <p class="OBS" id="p-obs">
+    <p class="OBS" >
 
         <sup>*</sup><b>OBS:</b>  Utilizando a integral podemos demonstrar a propriedade das p-séries,
          entretanto para manter a orgamização deixarei este <a href="#p-serie" class="link-content">link</a> para descorrer sobre as p-séries.
          
-         <div id="p-serie" class="passo-content" >
+         <div class="passo-content" >
             <div class='link-container'>
                 <a href="#tipos" class="link-content">Fechar</a>
             </div>
@@ -733,7 +740,7 @@ $$ f(x) = \frac{1}{1 - x} $$
     <p>$$ sin(x) = \sum^∞_{n = 0} (-1)^n \frac{x^{2n + 1}}{(2n + 1)!} $$</p>
 
     <h2>Equações Diferenciais Ordinárias (EDO's)</h2>
-    <p>EDO's são equações que envolve uma função e sua derivadas, por exemplo:</p>
+    <p id="EDO">EDO's são equações que envolve uma função e sua derivadas, por exemplo:</p>
     <p>$$ \frac{d^2}{dx^2} y + 3y = p(x) $$</p>
     
     <h3>Classificação</h3>
@@ -754,13 +761,49 @@ $$ f(x) = \frac{1}{1 - x} $$
     <p> Perceba que na EDO II o y está ao quadrado e a III o y é o coeficiente.</p>
 
     <h4>Homogeniedade</h4>
-    <p>Uma função de grau n será homogênea quando:</p>
-    <p>$$ f(λx, λy) = λ^nf(x,y)$$</p>
-    <p> Por exemplo:</p>
-    <p>$$ f(x,y) = x^3 + 2xy^2 $$</p>
-    <p>$$ f(λx, λy) = (λx)^3 + 2(λx)(λy)^2 ⇒ λ^3x^3 + 2λ^3x^2y^2 = λ^3(x^3 + 2xy^2) 
-        ⇒  λ^3f(x,y)$$ 
-    $$ f(λx, λy) = λ^3f(x,y)$$</p>
+    <p>
+        Uma <strong>Equação Diferencial Ordinária (EDO)</strong> é considerada <strong>homogênea</strong> quando todos os seus termos são funções homogêneas do mesmo grau em relação à função incógnita e suas derivadas. Isso significa que a equação pode ser escrita de forma que todos os termos envolvam a função \( y(x) \) e suas derivadas de maneira proporcional.
+    </p>
+
+    <ol>
+        <li>
+            <strong>Forma Geral:</strong><br>
+            Uma EDO de primeira ordem homogênea pode ser expressa como:
+            $$
+            \frac{dy}{dx} = f\left(\frac{y}{x}\right)
+            $$
+            Isso indica que a função \( f \) depende apenas da razão \( \frac{y}{x} \).
+        </li>
+        <li>
+            <strong>Verificação:</strong><br>
+            Uma função \( f(x, y) \) é dita homogênea de grau \( n \) se:
+            $$
+            f(tx, ty) = t^n f(x, y)
+            $$
+            Para uma EDO homogênea, a função \( f(x, y) \) deve ser homogênea de grau zero, ou seja:
+            $$
+            f(tx, ty) = f(x, y)
+            $$
+        </li>
+
+
+        
+            <p>
+                Considere a seguinte EDO:
+                $$ f(x, y) = \frac{x^2 + y^2}{xy} $$
+                Substituindo \( x \) por \( tx \) e \( y \) por \( ty \):
+                $$
+                f(tx, ty) = \frac{(tx)^2 + (ty)^2}{(tx)(ty)} = \frac{t^2(x^2 + y^2)}{t^2xy} = \frac{x^2 + y^2}{xy} = f(x, y)
+                $$
+                Como \( f(tx, ty) = f(x, y) \), a função é homogênea de grau zero.
+            </p>
+        
+
+
+
+
+
+
 
     <h3>Solução</h3>
 
@@ -877,7 +920,7 @@ $$ f(x) = \frac{1}{1 - x} $$
 
     <hr>
 
-    <h4>EDO's não homogêneas</h4>
+    <h4>EDO's não homogêneas (fator integrante)</h4>
 
 
     <div class="texto-h4">
@@ -964,6 +1007,8 @@ $$ f(x) = \frac{1}{1 - x} $$
         y(x) = \frac{1}{2} + C e^{-x^2}.
         $$
     </p>
+
+    <hr>
 
     <h4>EDO's exata</h4>
     <p>Uma EDO exata é caracterizada pelo formato:</p> 
@@ -1155,7 +1200,7 @@ $$ f(x) = \frac{1}{1 - x} $$
 
     <h2>Equações Diferênciais de Segunda Ordem</h2>
 
-<div class="texto-h4">
+<div class="texto-h4" id="EDO2">
     
     <p>
         As Equações Diferenciais Ordinárias (EDOs) de segunda ordem são equações que envolvem 
@@ -1164,44 +1209,184 @@ $$ f(x) = \frac{1}{1 - x} $$
 
     
 
-    <h3>Métodos de Solução para EDOs de Segunda Ordem</h3>
+    
+    <h3>EDOs Lineares Homogêneas com Coeficientes Constantes</h3>
 
-    <h4>EDOs Lineares Homogêneas com Coeficientes Constantes</h4>
+    <h4>1. Forma Geral</h4>
     <p>
-        Aplica-se a EDOs da forma:
-        $$ y'' + a y' + b y = 0. $$
+        Uma EDO linear homogênea de segunda ordem com coeficientes constantes tem a forma:
+        $$
+        a y'' + b y' + c y = 0
+        $$
+        Onde:
+        <ul>
+            <li>\( y = y(x) \) é a função incógnita.</li>
+            <li>\( y' = \frac{dy}{dx} \) e \( y'' = \frac{d^2y}{dx^2} \) são as derivadas de primeira e segunda ordem, respectivamente.</li>
+            <li>\( a \), \( b \) e \( c \) são constantes reais, com \( a \neq 0 \).</li>
+        </ul>
+    </p>
+
+    <h4>2. Método de Solução</h4>
+    <div class="texto-h4">
+    <p>
+        Para resolver essa EDO, seguimos os seguintes passos:
+    </p>
+
+    <h4>Passo 1: Equação Característica</h4>
+    <p>
+        Assumimos uma solução da forma exponencial:
+        $$
+        y = e^{rx}
+        $$
+        Onde \( r \) é uma constante a ser determinada.
     </p>
     <p>
-        <strong>Passo a Passo:</strong>
+        Substituindo \( y = e^{rx} \) na EDO, obtemos:
+        $$
+        a r^2 e^{rx} + b r e^{rx} + c e^{rx} = 0
+        $$
+        Como \( e^{rx} \neq 0 \), podemos dividir toda a equação por \( e^{rx} \), resultando na <strong>equação característica</strong>:
+        $$
+        a r^2 + b r + c = 0
+        $$
+    </p>
+
+    <h4>Passo 2: Resolver a Equação Característica</h4>
+    <p>
+        A equação característica é uma equação quadrática em \( r \). Suas raízes são dadas por:
+        $$
+        r = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+        $$
+        Dependendo do discriminante \( \Delta = b^2 - 4ac \), as raízes podem ser:
         <ol>
-            <li>
-                <strong>Equação Característica</strong>:
-                Substitua \( y = e^{rx} \) na EDO para obter:
-                $$ r^2 + a r + b = 0. $$
-            </li>
-            <li>
-                <strong>Raízes da Equação Característica</strong>:
-                Resolva a equação para encontrar \( r_1 \) e \( r_2 \).
-            </li>
-            <li>
-                <strong>Solução Geral</strong>:
-                <ul>
-                    <li>
-                        <strong>Raízes Reais e Distintas</strong> (\( r_1 \neq r_2 \)):
-                        $$ y(x) = C_1 e^{r_1 x} + C_2 e^{r_2 x}. $$
-                    </li>
-                    <li>
-                        <strong>Raízes Reais e Iguais</strong> (\( r_1 = r_2 \)):
-                        $$ y(x) = (C_1 + C_2 x) e^{r_1 x}. $$
-                    </li>
-                    <li>
-                        <strong>Raízes Complexas</strong> (\( r = \alpha \pm i\beta \)):
-                        $$ y(x) = e^{\alpha x} (C_1 \cos(\beta x) + C_2 \sin(\beta x)). $$
-                    </li>
-                </ul>
-            </li>
+            <li><strong>Reais e distintas</strong> (\( \Delta > 0 \)).</li>
+            <li><strong>Reais e iguais</strong> (\( \Delta = 0 \)).</li>
+            <li><strong>Complexas conjugadas</strong> (\( \Delta < 0 \)).</li>
         </ol>
     </p>
+</div>
+
+    <h4>Passo 3: Solução Geral</h4>
+
+    <div class="texto-h4">
+
+    <p>
+        A solução geral da EDO depende da natureza das raízes da equação característica:
+    </p>
+    <ol>
+        <li>
+            <strong>Raízes Reais e Distintas</strong> (\( r_1 \neq r_2 \)):
+            $$
+            y(x) = C_1 e^{r_1 x} + C_2 e^{r_2 x}
+            $$
+            Onde \( C_1 \) e \( C_2 \) são constantes arbitrárias.
+        </li>
+        <li>
+            <strong>Raízes Reais e Iguais</strong> (\( r_1 = r_2 = r \)):
+            $$
+            y(x) = (C_1 + C_2 x) e^{r x}
+            $$
+        </li>
+        <li>
+            <strong>Raízes Complexas Conjugadas</strong> (\( r = \alpha \pm i\beta \)):
+            $$
+            y(x) = e^{\alpha x} \left( C_1 \cos(\beta x) + C_2 \sin(\beta x) \right)
+            $$
+            Onde \( \alpha \) e \( \beta \) são as partes real e imaginária das raízes, respectivamente.
+        </li>
+    </ol>
+    </div>
+
+    <h3>3. Exemplos</h3>
+
+    <h4>Exemplo 1: Raízes Reais e Distintas</h4>
+    <p>
+        Considere a EDO:
+        $$
+        y'' - 3y' + 2y = 0
+        $$
+    </p>
+    <ol>
+        <li>
+            Equação característica:
+            $$
+            r^2 - 3r + 2 = 0
+            $$
+        </li>
+        <li>
+            Raízes:
+            $$
+            r = 1 \quad \text{e} \quad r = 2
+            $$
+        </li>
+        <li>
+            Solução geral:
+            $$
+            y(x) = C_1 e^{x} + C_2 e^{2x}
+            $$
+        </li>
+    </ol>
+
+    <h4>Exemplo 2: Raízes Reais e Iguais</h4>
+    <p>
+        Considere a EDO:
+        $$
+        y'' - 4y' + 4y = 0
+        $$
+    </p>
+    <ol>
+        <li>
+            Equação característica:
+            $$
+            r^2 - 4r + 4 = 0
+            $$
+        </li>
+        <li>
+            Raízes:
+            $$
+            r = 2 \quad \text{(dupla)}
+            $$
+        </li>
+        <li>
+            Solução geral:
+            $$
+            y(x) = (C_1 + C_2 x) e^{2x}
+            $$
+        </li>
+    </ol>
+
+    <h4>Exemplo 3: Raízes Complexas Conjugadas</h4>
+    <p>
+        Considere a EDO:
+        $$
+        y'' + 4y' + 13y = 0
+        $$
+    </p>
+    <ol>
+        <li>
+            Equação característica:
+            $$
+            r^2 + 4r + 13 = 0
+            $$
+        </li>
+        <li>
+            Raízes:
+            $$
+            r = -2 \pm 3i
+            $$
+        </li>
+        <li>
+            Solução geral:
+            $$
+            y(x) = e^{-2x} \left( C_1 \cos(3x) + C_2 \sin(3x) \right)
+            $$
+        </li>
+    </ol>
+    
+
+
+<hr>
+
 
     <h4>EDOs Lineares Não Homogêneas com Coeficientes Constantes</h4>
     <p>
@@ -1260,7 +1445,7 @@ $$ f(x) = \frac{1}{1 - x} $$
 
     <h2>Método das Séries de Potências: Método de Frobenius e Equação Indicial</h2>
 
-    <p>
+    <p id="serieDePotencias">
         O <strong>método das séries de potências</strong>, especificamente o <strong>Método de Frobenius</strong>, é uma técnica utilizada para resolver equações diferenciais lineares de segunda ordem quando o método padrão de séries de potências não é suficiente. 
         Esse método é útil quando o ponto em torno do qual a solução é expandida (geralmente \( x = 0 \)) é um <strong>ponto singular regular</strong> da equação diferencial.
     </p>
@@ -1428,7 +1613,7 @@ $$ f(x) = \frac{1}{1 - x} $$
 
     <h2>Transformada de Laplace</h2>
 
-    <p>
+    <p id="transformadaDeLaplace">
         A <strong>Transformada de Laplace</strong> é uma técnica matemática usada para transformar funções de uma variável real (geralmente o tempo \( t \)) em funções de uma variável complexa \( s \). Essa transformação é amplamente utilizada para resolver equações diferenciais lineares, analisar sistemas dinâmicos e estudar sinais e sistemas em engenharia e física.
     </p>
 
@@ -1620,7 +1805,7 @@ $$ f(x) = \frac{1}{1 - x} $$
 
         
             <h3>Introdução</h3>
-            <p>
+            <p id ="sitema">
                 Um <strong>sistema linear de equações diferenciais ordinárias de 1ª ordem</strong> consiste em um conjunto de equações diferenciais lineares que envolvem funções desconhecidas e suas derivadas de primeira ordem.
                 
             </p>
@@ -1888,19 +2073,6 @@ $$ f(x) = \frac{1}{1 - x} $$
                             Aplicando a Transformada Inversa de Laplace, obtemos \( x_1(t) \) e \( x_2(t) \).
                         </p>
                     </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </div>

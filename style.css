@@ -279,3 +279,29 @@ h5 {
 }
 
 
+.simple-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0078D7;
+  
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  border-right: dotted 20px rgb(61, 55, 47);
+}
+
+.Aviso{
+  display: flex;
+  background-color: #ff0000;
+  border-radius: 30px;
+  
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.content{
+background-color: antiquewhite;
+padding-right: 100px;
+padding-left: 100px;
+
+}
